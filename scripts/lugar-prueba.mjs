@@ -52,7 +52,19 @@ ok(!nan && salto < 4, `el recorrido no tiene NaN ni saltos (máx. ${salto.toFixe
 const c0 = ruta(0), c1 = ruta(1);
 const K = ESC.casa, ca = Math.cos(K.rect.ang), sa = Math.sin(K.rect.ang);
 const uPuerta = (c0.pos[0] - K.rect.cx) * ca + (c0.pos[2] - K.rect.cz) * sa;
-ok(uPuerta > K.rect.largo / 2 && uPuerta < K.rect.largo / 2 + K.porche.fondo && c0.pos[1] - K.suelo < 4.5, `empieza bajo el porche (a ${(uPuerta - K.rect.largo / 2).toFixed(1)} m del hastial, ojos a ${(c0.pos[1] - K.suelo).toFixed(1)} m)`);
+// Empieza recién salida del porche y por encima de su tejadillo, mirando valle abajo (+z), no a la ladera que sube
+// delante del porche (2026-11-26: a la altura de los ojos y de frente, el cuadro era casi todo ladera).
+const az0 = (Math.atan2(c0.mira[0] - c0.pos[0], c0.mira[2] - c0.pos[2]) * 180 / Math.PI + 360) % 360;
+ok(uPuerta > K.rect.largo / 2 + K.porche.fondo && uPuerta < K.rect.largo / 2 + 8 && c0.pos[1] - K.suelo > 4.5 && c0.pos[1] - K.suelo < 9 && (az0 > 335 || az0 < 5),
+  `empieza recién salida del porche, mirando valle abajo (a ${(uPuerta - K.rect.largo / 2).toFixed(1)} m del hastial, a ${(c0.pos[1] - K.suelo).toFixed(1)} m sobre el suelo de la casa, azimut ${az0.toFixed(0)}°)`);
+// el giro de la puerta a la casa va repartido: sin latigazo al cruzarse el punto de mira con la cámara
+let giroMax = 0, azAnt = null;
+for (let i = 0; i <= 240; i++) {
+  const c = ruta(i / 2000), az = Math.atan2(c.mira[0] - c.pos[0], c.mira[2] - c.pos[2]) * 180 / Math.PI;
+  if (azAnt !== null) giroMax = Math.max(giroMax, Math.abs(((az - azAnt + 540) % 360) - 180));
+  azAnt = az;
+}
+ok(giroMax < 3, `de la puerta a la casa gira sin latigazos (máx. ${giroMax.toFixed(1)}° por 0,05 % de scroll)`);
 const yaw1 = Math.atan2(c1.mira[0] - c1.pos[0], c1.mira[2] - c1.pos[2]) * 180 / Math.PI;
 const ySl = ESC.lugares.find((l) => l.clave === 'santalla');
 ok(c1.pos[1] - ESC.cota > 300 && c1.mira[2] > c1.pos[2] + 1500 && ySl.z > c1.pos[2], `acaba en lo alto (${Math.round(c1.pos[1])} m) mirando al sur, hacia Santa Eulalia (rumbo ${((180 - yaw1 + 360) % 360).toFixed(0)}°)`);

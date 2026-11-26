@@ -33,7 +33,8 @@
   var SCRIPT = (typeof document !== 'undefined' && document.currentScript && document.currentScript.src) || '';
   var RAIZ = SCRIPT ? new URL('../', SCRIPT).href : (typeof location !== 'undefined' ? new URL('./', location.href).href : './');
   var BASE = RAIZ + 'img/lugar/';
-  var ESCENA = RAIZ + 'data/lugar-escena.json';
+  // la escena hereda el ?v= de este script: si no, el navegador y Pages siguen sirviendo la anterior
+  var ESCENA = RAIZ + 'data/lugar-escena.json' + (SCRIPT.indexOf('?') > -1 ? SCRIPT.slice(SCRIPT.indexOf('?')) : '');
   var THREE_URL = RAIZ + 'vendor/three-0.160.0.module.min.js';
   var LAT = 43.286736, LON = -7.030365, TZ = 'Europe/Madrid', RAD = Math.PI / 180;
 
@@ -185,7 +186,7 @@
 
   /* ============ paradas y rótulos (los mismos en el 3D y en el plano) ============ */
   var PARADAS = [
-    { desde: 0, t: 'La puerta', d: 'Bajo el porche de Casa Freixe, a 590 m: el patio de piedra y la aldea de Barcia.' },
+    { desde: 0, t: 'La puerta', d: 'Al salir del porche de Casa Freixe, a 590 m: el valle del río Barcia aguas abajo y, a la derecha, la aldea.' },
     { desde: 0.09, t: 'La casa', d: 'Piedra, pizarra y el porche de madera, levantados sobre su planta del Catastro.' },
     { desde: 0.28, t: 'El río Barcia', d: 'A unos 90 m de la puerta baja el río Barcia, entre prados y sotos.' },
     { desde: 0.46, t: 'Valle abajo', d: 'El río tuerce al este y busca el Agüeira, más abajo de Santa Eulalia.' },

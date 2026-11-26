@@ -35,7 +35,7 @@ Un vuelo que avanza con el scroll (escenario `position: sticky` en una pista de 
 
 | Scroll | Parada | Cámara |
 |---|---|---|
-| 0 – 9 % | La puerta | bajo el porche, a la altura de los ojos, mirando al patio |
+| 0 – 9 % | La puerta | recién salida del porche, a 4,2 m del suelo, mirando valle abajo (azimut 348°); luego gira a la derecha por la aldea hasta dar con la casa. No sale a la altura de los ojos ni mirando de frente: en el MDT la ladera sube justo delante del porche y llenaba el cuadro (corregido el 2026-11-26) |
 | 9 – 28 % | La casa | sale al patio, se vuelve y la rodea desde arriba (piedra, pizarra, porche) |
 | 28 – 46 % | El río Barcia | baja al cauce al oeste de la aldea y se pone aguas abajo |
 | 46 – 70 % | Valle abajo | sigue el río a ras de las copas (un fotograma cada ~70 m de río) hasta donde tuerce al este |

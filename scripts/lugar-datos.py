@@ -633,11 +633,23 @@ rec = []
 def kf(p, pos, mira, nota):
     rec.append({'p': p, 'pos': [round(float(v), 1) for v in pos], 'mira': [round(float(v), 1) for v in mira], 'nota': nota})
 
-# 1. la puerta: bajo el porche, a la altura de los ojos, mirando fuera (al patio y al valle)
-kf(0.0, (puerta[0], y_suelo_puerta + 1.65, puerta[1]), (fuera[0] + 0, y_patio + 1.0, fuera[1]), 'la puerta')
-# 2. sale al patio y se da la vuelta: la casa entera, con su porche
+# 1. la puerta: recién salida del porche, a 4,2 m del suelo, mirando valle abajo (azimut 348°: 0 = +z, 90 = +x).
+#    A la altura de los ojos y de frente (azimut 27°) no vale: en el MDT la ladera sube justo delante del porche y
+#    llenaba el cuadro. Dos fotogramas intermedios reparten el giro a la derecha (la aldea y luego la casa) para que
+#    no dé un latigazo al cruzarse el punto de mira con la cámara.
+def mira_az(pos, azg, pitg, d=30.0):
+    a_, q_ = math.radians(azg), math.radians(pitg)
+    return (pos[0] + math.sin(a_) * math.cos(q_) * d, pos[1] + math.sin(q_) * d, pos[2] + math.cos(a_) * math.cos(q_) * d)
+sale = casa_pt(mitad + 4.5, -0.8)
+p_sale = (sale[0], float(alt_xz(*sale)[0]) + 4.2, sale[1])
 frente = casa_pt(mitad + 26, 6)
-kf(0.12, (frente[0], y_patio + 7, frente[1]), (cr['cx'], casa['suelo'] + 4.5, cr['cz']), 'la casa')
+p_frente = (frente[0], y_patio + 7, frente[1])
+entre = lambda t: tuple(p_sale[k] + (p_frente[k] - p_sale[k]) * t for k in range(3))
+kf(0.0, p_sale, mira_az(p_sale, 348, -4), 'la puerta')
+kf(0.04, entre(0.22), mira_az(entre(0.22), 305, -7), 'gira hacia la aldea')
+kf(0.08, entre(0.62), mira_az(entre(0.62), 248, -10), 'gira hacia la casa')
+# 2. sale al patio y se da la vuelta: la casa entera, con su porche
+kf(0.12, p_frente, (cr['cx'], casa['suelo'] + 4.5, cr['cz']), 'la casa')
 lado = casa_pt(mitad + 20, 30)
 kf(0.2, (lado[0], float(alt_xz(*lado)[0]) + 22, lado[1]), (cr['cx'], casa['suelo'] + 3, cr['cz']), 'la casa desde arriba')
 # 3 y 4. baja al río (al oeste de la aldea) y sigue el valle aguas abajo, por encima del cauce: un fotograma cada ~70 m
