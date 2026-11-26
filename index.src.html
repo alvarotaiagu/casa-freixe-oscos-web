@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Propuesta de web para Casa Freixe (Barcia, Santa Eulalia de Oscos). No encargada: en local, sin publicar.
+     Se edita index.src.html y partes/; index.html lo genera construir.mjs. -->
+<title>Casa Freixe · Apartamentos rurales en Barcia, Santa Eulalia de Oscos</title>
+<meta name="description" content="Dos apartamentos rurales de piedra y pizarra en Barcia, Santa Eulalia de Oscos (Asturias), Reserva de la Biosfera de Oscos-Eo. Chimenea de leña, abierto todo el año, admite animales.">
+<meta property="og:title" content="Casa Freixe · Apartamentos rurales en Barcia">
+<meta property="og:description" content="Dos apartamentos de piedra y pizarra en Barcia, Santa Eulalia de Oscos. Reserva de la Biosfera de Oscos-Eo.">
+<!--parte:partes/cabeza.html-->
+<!--jsonld-->
+</head>
+<body>
+<!--parte:partes/iconos.html-->
+<!--rotulo-simbolo-->
+<!--parte:partes/cabecera.html-->
+
+<main id="principal">
+
+  <!-- ==================================================================================================
+       1. PORTADA «El punto de la i» (js/portada.js, Freixe.portada). Su rótulo redibujado en SVG (construir.mjs): la
+       línea de monte se traza, la i crece y el punto de la i es un fresno vivo, dibujado en un <canvas> encima, con
+       hojas compuestas una a una y en la estación de hoy (js/fresno.js). El puntero (o el dedo en horizontal, o el
+       móvil inclinado, tras pedir permiso) es viento. Al bajar caen hojas hacia «La casa».
+       Sin JS, con movimiento reducido o si el módulo falla: el rótulo con la copa verde de su logo. El LCP es la frase,
+       que no depende de ninguna animación.
+       ================================================================================================== -->
+  <section class="portada" id="portada" aria-labelledby="t-portada">
+    <div class="portada__lienzo" data-modulo="portada"></div>
+    <div class="portada__in env">
+      <h1 class="portada__rotulo" id="t-portada">
+<!--rotulo-portada-->
+        <span class="vh">Casa Freixe, turismo rural</span>
+      </h1>
+      <div class="portada__pie">
+        <div class="portada__txt">
+          <p class="portada__frase">Dos apartamentos rurales de piedra y pizarra en Barcia, Santa Eulalia de Oscos. Reserva de la Biosfera de Oscos-Eo.</p>
+          <p class="portada__acc"><a class="btn btn--acento" href="#reservar">Ver fechas</a><a class="btn btn--linea portada__tel" href="tel:+34985621215"><svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-tel" width="24" height="24"/></svg><span class="cifra">985 621 215</span></a></p>
+        </div>
+        <div class="portada__lamina">
+          <p class="portada__estacion" id="portada-estacion">Freixe es fresno: el árbol que hace de punto de la i.</p>
+          <button class="portada__inclinar" id="portada-inclinar" type="button" hidden><svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-movil" width="24" height="24"/></svg>Mover con el móvil</button>
+        </div>
+      </div>
+      <a class="portada__guia" id="portada-guia" href="#casa"><svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-abajo" width="24" height="24"/></svg><span>La casa</span></a>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       2. LA CASA: cifras grandes y la casa por fuera. Freixe = fresno, con la ramita de hoy (solo en la versión
+       «Fresno»; en la sobria, el dato de la estación en letra).
+       ================================================================================================== -->
+  <section class="casa" id="casa" aria-labelledby="t-casa">
+    <div class="env casa__in">
+      <div class="casa__txt">
+        <h2 class="sec-tit" id="t-casa">Piedra, pizarra y madera en una aldea de cuatro vecinos</h2>
+        <p class="casa__intro">Una casa tradicional asturiana, de piedra, restaurada en dos apartamentos independientes. Es de una familia ganadera de Barcia, abre todo el año y admite animales.</p>
+        <dl class="casa__cifras">
+          <div><dt>Apartamentos</dt><dd class="cifra">2</dd></div>
+          <div><dt>Plazas, con la supletoria</dt><dd class="cifra">5</dd></div>
+          <div><dt>Chimeneas de leña, una en cada uno</dt><dd class="cifra">2</dd></div>
+          <div><dt>Abierto</dt><dd class="casa__todo">todo el año</dd></div>
+        </dl>
+        <div class="casa__nombre">
+          <canvas class="ramita" data-ramita="hoy" width="120" height="120" aria-hidden="true"></canvas>
+          <p><b>Freixe</b> es fresno. Es el árbol que hace de punto de la i en su rótulo, y aquí sale como está hoy en Barcia: <span class="casa__hoy" data-estacion-texto>en su estación</span>.</p>
+        </div>
+      </div>
+      <figure class="casa__foto">
+        <img data-foto="casa-fachada" alt="La casa de piedra con tejado de pizarra y porche de madera, en Barcia" sizes="(max-width: 899px) 92vw, 46vw">
+        <figcaption>La casa, por fuera: piedra, tejado de pizarra y el porche de madera.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       3. LOS DOS APARTAMENTOS, uno junto al otro, cada uno con su galería (visor por nombre), y lo que tienen los dos
+       (iconos dibujados). En la sobria, además, la tabla «De un vistazo».
+       ================================================================================================== -->
+  <section class="aptos" id="apartamentos" aria-labelledby="t-aptos">
+    <div class="env">
+      <h2 class="sec-tit" id="t-aptos">Freixe I y Freixe II, uno junto al otro</h2>
+      <p class="sec-intro">Dos apartamentos independientes, cada uno con su puerta, su chimenea y su cocina. Para dos personas; uno de los dos admite una cama supletoria.</p>
+<!--unidades-->
+<!--vistazo-->
+<!--servicios-->
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       4. POR DENTRO, POR ESTANCIAS (data/fotos.json): índice fijo que marca la estancia que se ve, filas de la misma
+       altura sin marcos, visor por nombre de archivo. Fotos a su tamaño real como mucho.
+       ================================================================================================== -->
+  <section class="dentro" id="dentro" aria-labelledby="t-dentro">
+    <div class="env">
+      <h2 class="sec-tit" id="t-dentro">Por dentro, estancia por estancia</h2>
+<!--galeria-->
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       5. LA BIENVENIDA: lo que cuentan los huéspedes, con citas literales cortas y fechadas de EscapadaRural. «Suele
+       haber», sin prometer: qué incluye hoy está por confirmar.
+       ================================================================================================== -->
+  <section class="bienvenida" id="bienvenida" aria-labelledby="t-bienvenida">
+    <div class="env">
+<!--bienvenida-->
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       6. DESDE LA PUERTA (#lugar): módulo del agente Lugar (js/lugar.js, css/lugar.css). Sección OSCURA: base.css
+       redefine dentro sus variables de texto. Ningún antepasado de [data-modulo="lugar"] lleva overflow, transform ni
+       filter. Respaldo de la Web (sin JS, sin WebGL): una foto del entorno y el texto.
+       ================================================================================================== -->
+  <section class="lugar" id="lugar" aria-labelledby="t-lugar">
+    <div class="env lugar__cab">
+      <h2 class="sec-tit" id="t-lugar">Desde la puerta</h2>
+      <p>De la casa al río Barcia y, valle arriba, a Santa Eulalia y las aldeas: el relieve y la ortofoto del IGN, las rutas que salen de aquí y el sol y la luna de ahora.</p>
+    </div>
+    <div data-modulo="lugar">
+<!--lugar-respaldo-->
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       7. ALREDEDOR (#alrededor): módulo del agente Lugar. construir.mjs mete aquí partes/alrededor.html (lista con las
+       cifras de OSRM = respaldo sin JS + hueco del mapa); mientras no exista, una lista provisional sin cifras.
+       ================================================================================================== -->
+  <section class="alrededor" id="alrededor" aria-labelledby="t-alrededor">
+    <div class="env">
+      <h2 class="sec-tit" id="t-alrededor">Alrededor</h2>
+      <p class="sec-intro">Elige un sitio de la lista: el mapa va hasta él y dibuja el camino desde la casa, con los kilómetros y los minutos.</p>
+      <div data-modulo="alrededor">@@ALREDEDOR@@</div>
+    </div>
+  </section>
+
+  <!-- 8. OPINIONES: la nota y el enlace, sin recuento destacado (regla de pocas reseñas); tres citas cortas y fechadas. -->
+  <section class="opiniones" id="opiniones" aria-labelledby="t-opiniones">
+<!--opiniones-->
+  </section>
+
+  <!-- ==================================================================================================
+       9. RESERVAR (js/reserva.js): simulador MARCADO. Precio de su web de 2014 (70/65 € + IVA) marcado como supuesto;
+       los días ocupados son de ejemplo. No envía ni guarda nada: prepara un correo o la llamada.
+       ================================================================================================== -->
+  <section class="reservar" id="reservar" aria-labelledby="t-reservar">
+    <div class="env">
+      <h2 class="sec-tit" id="t-reservar">Elige fechas</h2>
+      <p class="sec-intro">Prueba fechas y mira el precio de cada noche. Cuando lo tengas, se prepara la solicitud para la casa: ellos te confirman.</p>
+<!--reserva-->
+    </div>
+  </section>
+
+  <!-- 10. CONTACTO + MAPA (Google, solo al pulsar) -->
+  <section class="contacto" id="contacto" aria-labelledby="t-contacto">
+<!--contacto-->
+  </section>
+
+</main>
+
+<!--parte:partes/pie.html-->
+<!--parte:partes/visor.html-->
+<!--datos-->
+<script src="js/fresno.js" defer></script>
+<script src="js/portada.js" defer></script>
+<script src="js/lugar.js" defer></script>
+<script src="js/alrededor.js" defer></script>
+<script src="js/reserva.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

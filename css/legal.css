@@ -1,0 +1,25 @@
+/* Casa Freixe · páginas legales y 404 (base.css pone variables, letras, rótulo y botones) */
+.legal-cab { border-bottom: 1px solid var(--linea); }
+.legal-cab .env { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: var(--cabecera); }
+.legal-marca { color: var(--texto); display: block; padding: 6px 0; }
+.legal-marca svg { width: 140px; height: auto; --rotulo-trazo: 7; --rotulo-monte: 3.4; overflow: visible; }
+.volver { color: var(--texto); }
+.legal { padding: clamp(40px, 7vw, 88px) 0; }
+.legal .env { max-width: calc(760px + 2 * var(--gutter)); }
+.legal h1 { font-size: clamp(2.2rem, 1.6rem + 2.4vw, 3.4rem); margin-bottom: 1.4rem; }
+.legal h2 { font-size: 1.5rem; margin: 2.2rem 0 .7rem; }
+.legal dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 18px; margin: 1.2rem 0; }
+.legal dt { color: var(--texto-suave); }
+.legal dd { margin: 0; }
+.legal .aviso { border-left: 3px solid var(--acento); padding: 6px 0 6px 14px; color: var(--texto-suave); font-size: .95rem; }
+.legal ul { padding-left: 1.2em; }
+.legal li { margin-bottom: .5em; }
+.legal-pie { border-top: 1px solid var(--linea); padding: 24px 0 40px; }
+.legal-pie .env { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: .92rem; }
+.legal-pie a { color: var(--texto-suave); }
+@media (max-width: 559px) { .legal dl { grid-template-columns: minmax(0, 1fr); } .legal dd { margin-bottom: 8px; } }
+/* 404: el rótulo sin el punto de la i (se ha caído) */
+.no { min-height: 100svh; display: grid; align-items: center; padding: 48px 0; }
+.no__rotulo { width: min(100%, 620px); overflow: visible; color: var(--texto); --copa-vis: hidden; margin-bottom: 28px; }
+.no h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem); margin-bottom: 1rem; }
+.no p { color: var(--texto-suave); font-size: 1.1rem; }

@@ -1,0 +1,392 @@
+[
+ {
+  "nombre": "i-cocina-chimenea",
+  "grupo": "I",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__DSC_0313.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "i-escalera",
+  "grupo": "I",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__DSC_0336.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "i-escalera-piedra",
+  "grupo": "I",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__DSC_0339.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "i-dormitorio-buhardilla",
+  "grupo": "I",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__DSC_0340.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "i-dormitorio-naranja",
+  "grupo": "I",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__DSC_0350.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "i-dormitorio-puerta-bano",
+  "grupo": "I",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__DSC_0358.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "i-bano",
+  "grupo": "I",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__DSC_0361.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "i-cantaros",
+  "grupo": "I",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__DSC_0362.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "i-dormitorio-armario",
+  "grupo": "I",
+  "ancho": 800,
+  "alto": 536,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/alquiler-apartamento-oscos__la_foto_(1).jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-entrada",
+  "grupo": "II",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0199.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-cocina-sofa",
+  "grupo": "II",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0201.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-cocina-chimenea",
+  "grupo": "II",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0207.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-cocina-mesa",
+  "grupo": "II",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0212.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-chimenea-puerta",
+  "grupo": "II",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0224.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-chimenea-fuego",
+  "grupo": "II",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0246.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-dormitorio-piedra",
+  "grupo": "II",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0251.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-dormitorio-ventana",
+  "grupo": "II",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0253.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-bano",
+  "grupo": "II",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0283.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-dormitorio-maleta",
+  "grupo": "II",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0399.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-dormitorio-libro",
+  "grupo": "II",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/apartamento-rural-oscos__DSC_0406.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-salon",
+  "grupo": "II",
+  "ancho": 800,
+  "alto": 450,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/apartamento-rural-oscos__la_foto_(2).jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ii-dormitorio-amarillo",
+  "grupo": "II",
+  "ancho": 800,
+  "alto": 409,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/apartamento-rural-oscos__la_foto_(3).jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "casa-fachada",
+  "grupo": "fuera",
+  "ancho": 708,
+  "alto": 449,
+  "anchos": [
+   400,
+   708
+  ],
+  "fuente": "turismoasturias-AR0311_FreixeI1.jpg",
+  "origen": "Turismo Asturias (ficha oficial de Freixe I)",
+  "recorte": 0
+ },
+ {
+  "nombre": "casa-porche",
+  "grupo": "fuera",
+  "ancho": 800,
+  "alto": 530,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/turismo-rural-oscos__DSC_0387.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "casa-camino",
+  "grupo": "fuera",
+  "ancho": 530,
+  "alto": 800,
+  "anchos": [
+   400,
+   530
+  ],
+  "fuente": "web/turismo-rural-oscos__DSC_0421.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "aldea-entre-hojas",
+  "grupo": "fuera",
+  "ancho": 800,
+  "alto": 380,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/turismo-rural-oscos__DSC_0443.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 16
+ },
+ {
+  "nombre": "valle-otono",
+  "grupo": "entorno",
+  "ancho": 640,
+  "alto": 473,
+  "anchos": [
+   400,
+   640
+  ],
+  "fuente": "web/entorno__02365.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "ventana-pizarra",
+  "grupo": "entorno",
+  "ancho": 800,
+  "alto": 532,
+  "anchos": [
+   400,
+   800
+  ],
+  "fuente": "web/entorno__DSC_0196.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "horreo",
+  "grupo": "entorno",
+  "ancho": 532,
+  "alto": 800,
+  "anchos": [
+   400,
+   532
+  ],
+  "fuente": "web/entorno__DSC_0303.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ },
+ {
+  "nombre": "cascada-otono",
+  "grupo": "entorno",
+  "ancho": 560,
+  "alto": 312,
+  "anchos": [
+   400,
+   560
+  ],
+  "fuente": "web/entorno__111.jpg",
+  "origen": "casafreixe.com (su web, 2014)",
+  "recorte": 0
+ }
+]

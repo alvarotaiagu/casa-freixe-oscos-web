@@ -1,0 +1,209 @@
+{
+  "_fuente": "ref/DATOS-FREIXE.md (2026-11-26). Lo que no esté allí no se inventa: va a PENDIENTES.md o se marca «por confirmar».",
+  "nombre": "Casa Freixe",
+  "registro": "AR0311",
+  "categoria": "apartamento rural, categoría 2",
+  "titular": {
+    "nombre": "Ganadería Freixe S.C.",
+    "nif": "pendiente de confirmar",
+    "domicilio": "Barcia, 33776 Santa Eulalia de Oscos (Asturias)"
+  },
+  "lugar": {
+    "aldea": "Barcia",
+    "concejo": "Santa Eulalia de Oscos",
+    "cp": "33776",
+    "provincia": "Asturias",
+    "lat": 43.286761,
+    "lon": -7.0313622,
+    "reserva": "Reserva de la Biosfera Río Eo, Oscos y Terras de Burón"
+  },
+  "contacto": {
+    "telefonos": [
+      {
+        "texto": "985 621 215",
+        "tel": "+34985621215",
+        "tipo": "Fijo"
+      },
+      {
+        "texto": "669 924 374",
+        "tel": "+34669924374",
+        "tipo": "Móvil"
+      }
+    ],
+    "correo": "info@casafreixe.com",
+    "facebook": "https://www.facebook.com/casafreixe"
+  },
+  "temporadas": {
+    "alta": "Julio, agosto, Semana Santa y puentes",
+    "baja": "El resto del año"
+  },
+  "iva": 10,
+  "precios": {
+    "alta": 70,
+    "baja": 65,
+    "supuesto": true,
+    "nota": "Precio de su web de 2014, por apartamento y noche, IVA (10 %) aparte. Turismo Asturias da de 42,8 € a 85,6 € como orientativo. Vigentes: por confirmar."
+  },
+  "unidades": [
+    {
+      "id": "i",
+      "nombre": "Freixe I",
+      "romano": "I",
+      "personas": [
+        1,
+        2
+      ],
+      "plantas": "Dos plantas",
+      "plantasConfirmado": true,
+      "texto": "De dos plantas y con entrada propia: abajo la cocina-salón con la chimenea; arriba, el dormitorio de matrimonio, bajo las vigas.",
+      "fotos": [
+        "i-cocina-chimenea",
+        "i-escalera",
+        "i-dormitorio-buhardilla",
+        "i-dormitorio-naranja",
+        "i-bano"
+      ],
+      "plazas": "2"
+    },
+    {
+      "id": "ii",
+      "nombre": "Freixe II",
+      "romano": "II",
+      "personas": [
+        1,
+        3
+      ],
+      "plantas": "Por confirmar",
+      "plantasConfirmado": false,
+      "texto": "Con entrada propia, de piedra y madera: cocina-salón con chimenea de leña y el dormitorio de matrimonio con la pared de piedra a la vista.",
+      "fotos": [
+        "ii-cocina-chimenea",
+        "ii-chimenea-fuego",
+        "ii-dormitorio-piedra",
+        "ii-dormitorio-libro",
+        "ii-bano"
+      ],
+      "plazas": "2 + supletoria"
+    }
+  ],
+  "supletoria": "Son 5 plazas en total. En la web se cuenta la supletoria en Freixe II (así lo deja el encargo, y una familia con una niña pequeña se alojó en el II): por confirmar con la casa.",
+  "servicios": [
+    {
+      "icono": "chimenea",
+      "nombre": "Chimenea con leña",
+      "detalle": "En la cocina-salón, con la leña a tu disposición."
+    },
+    {
+      "icono": "calefaccion",
+      "nombre": "Calefacción central",
+      "detalle": "En toda la casa, todo el año."
+    },
+    {
+      "icono": "cocina",
+      "nombre": "Cocina equipada",
+      "detalle": "Nevera, microondas, tostador, batidora y menaje completo."
+    },
+    {
+      "icono": "lavadora",
+      "nombre": "Lavadora y plancha",
+      "detalle": "Para estancias largas."
+    },
+    {
+      "icono": "cama",
+      "nombre": "Dormitorio de matrimonio",
+      "detalle": "Con ropa de cama y de baño incluidas."
+    },
+    {
+      "icono": "bano",
+      "nombre": "Baño completo",
+      "detalle": "Uno en cada apartamento."
+    },
+    {
+      "icono": "tv",
+      "nombre": "TV y DVD",
+      "detalle": "En el salón y en el dormitorio."
+    },
+    {
+      "icono": "wifi",
+      "nombre": "WiFi gratis",
+      "detalle": "En los dos apartamentos."
+    },
+    {
+      "icono": "perro",
+      "nombre": "Admite animales",
+      "detalle": "Huéspedes con perro lo cuentan en sus opiniones."
+    },
+    {
+      "icono": "coche",
+      "nombre": "Aparcamiento",
+      "detalle": "Junto a la casa."
+    },
+    {
+      "icono": "barbacoa",
+      "nombre": "Barbacoa",
+      "detalle": "Fuera, para usarla con la leña de la casa."
+    }
+  ],
+  "resenas": {
+    "nota": "5",
+    "sobre": "5",
+    "fuente": "EscapadaRural",
+    "enlace": "https://www.escapadarural.com/casa-rural/asturias/casa-freixe/opiniones",
+    "citas": [
+      {
+        "texto": "El lugar es una aldea de cuento, con cuatro vecinos entrañables.",
+        "nombre": "Macarena",
+        "fecha": "septiembre de 2018",
+        "viaje": "en familia"
+      },
+      {
+        "texto": "Justo por la puerta pasa una ruta de senderismo llamada Os Cortios de unos 5-6km.",
+        "nombre": "Vera",
+        "fecha": "mayo de 2019",
+        "viaje": "en familia"
+      },
+      {
+        "texto": "La casa es muy cómoda, bonita y bien equipada, construida en piedra y pizarra, materiales característicos de la zona.",
+        "nombre": "Cristina",
+        "fecha": "febrero de 2018",
+        "viaje": "en pareja"
+      },
+      {
+        "texto": "El entorno es precioso, ideal para disfrutar de la naturaleza y del silencio.",
+        "nombre": "Samuel",
+        "fecha": "agosto de 2021",
+        "viaje": "en pareja"
+      }
+    ]
+  },
+  "bienvenida": [
+    {
+      "que": "Huevos de sus gallinas",
+      "icono": "huevos",
+      "cita": "nos regaló una cesta de huevos frescos de sus gallinas",
+      "nombre": "Cristina",
+      "fecha": "febrero de 2018"
+    },
+    {
+      "que": "Miel",
+      "icono": "miel",
+      "cita": "nos regalo huevos frescos de sus gallinas y una miel deliciosa",
+      "nombre": "Ana",
+      "fecha": "enero de 2017"
+    },
+    {
+      "que": "Rosquillas y verdura del huerto",
+      "icono": "huerto",
+      "cita": "nos diron rosquillas, verduras del huerto y mucha hospitabilidad",
+      "nombre": "Vera",
+      "fecha": "mayo de 2019"
+    },
+    {
+      "que": "Leña para la chimenea y la barbacoa",
+      "icono": "lena",
+      "cita": "también leña para la chimenea y la barbacoa",
+      "nombre": "Cristina",
+      "fecha": "febrero de 2018"
+    }
+  ]
+}

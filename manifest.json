@@ -1,0 +1,12 @@
+{
+  "name": "Casa Freixe · Apartamentos rurales en Barcia",
+  "short_name": "Casa Freixe",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#EDEEEB",
+  "theme_color": "#EDEEEB",
+  "icons": [
+    { "src": "marca/icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "marca/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

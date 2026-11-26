@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Propuesta de web para Casa Freixe (Barcia, Santa Eulalia de Oscos). No encargada: en local, sin publicar.
+     Se edita index.src.html y partes/; index.html lo genera construir.mjs. -->
+<title>Casa Freixe · Apartamentos rurales en Barcia, Santa Eulalia de Oscos</title>
+<meta name="description" content="Dos apartamentos rurales de piedra y pizarra en Barcia, Santa Eulalia de Oscos (Asturias), Reserva de la Biosfera de Oscos-Eo. Chimenea de leña, abierto todo el año, admite animales.">
+<meta property="og:title" content="Casa Freixe · Apartamentos rurales en Barcia">
+<meta property="og:description" content="Dos apartamentos de piedra y pizarra en Barcia, Santa Eulalia de Oscos. Reserva de la Biosfera de Oscos-Eo.">
+<!-- script bloqueante: clase «js», entrar siempre arriba (checklist 12) y el mando de maqueta. La estación la pone
+     js/estacion.js, justo detrás y también bloqueante (pesa 2 KB), para que el acento no salte al pintar. -->
+<script>
+(function (d, w) {
+  var h = d.documentElement;
+  h.classList.add('js');
+  w.Freixe = w.Freixe || {};
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+  if (!location.hash) w.scrollTo(0, 0);
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.has('sin-webgl')) h.classList.add('sin-webgl');
+    // MANDO DE MAQUETA (no viaja al cliente): solo con ?revision
+    if (q.has('revision')) {
+      h.classList.add('revision');
+      if (q.get('densidad') === 'sobria') h.classList.add('densidad-sobria');
+    }
+  } catch (e) {}
+})(document, window);
+</script>
+<script src="js/estacion.js?v=20a05cab"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&text=TurismoRal&display=swap">
+<link rel="stylesheet" href="css/base.css?v=e1c723e5">
+<link rel="stylesheet" href="css/estilos.css?v=cc42da92">
+<link rel="stylesheet" href="css/lugar.css?v=d27e3cdd">
+<link rel="stylesheet" href="css/alrededor.css?v=a49e674e">
+<link rel="icon" href="marca/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="marca/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="marca/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#EDEEEB">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Casa Freixe","description":"Dos apartamentos rurales de piedra y pizarra en Barcia, Santa Eulalia de Oscos (Asturias).","address":{"@type":"PostalAddress","addressLocality":"Barcia, Santa Eulalia de Oscos","postalCode":"33776","addressRegion":"Asturias","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":43.286736,"longitude":-7.030365},"telephone":"+34985621215","email":"info@casafreixe.com","petsAllowed":true,"numberOfRooms":2,"sameAs":["https://www.facebook.com/casafreixe"]}</script>
+</head>
+<body>
+<!-- iconos propios: un solo trazo de 1,6 redondo en una rejilla de 24 (se usan con <use> y width/height; el color, con
+     stroke: currentColor en css/base.css). Los del oficio de la casa (chimenea, leña, huevos, miel, huerto) son dibujo propio. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-chimenea" viewBox="0 0 24 24"><path d="M4 21V10.5L7.5 3h9l3.5 7.5V21M2.5 21h19M4 10.5h16M8 21v-5.5a4 4 0 0 1 8 0V21"/><path d="M12 20.2c-1.6 0-2.3-1-2.3-2 0-1.4 1.4-1.8 1.6-3.3 1.4.8 3 2 3 3.4 0 1-.9 1.9-2.3 1.9z"/></symbol>
+    <symbol id="i-calefaccion" viewBox="0 0 24 24"><path d="M5 19V8M9 19V8M13 19V8M17 19V8M3.5 8h15M3.5 19h15M20.5 11v5"/><path d="M5 5.5c.6-.8 1.4-.8 2 0s1.4.8 2 0 1.4-.8 2 0 1.4.8 2 0 1.4-.8 2 0"/></symbol>
+    <symbol id="i-cocina" viewBox="0 0 24 24"><rect x="3.5" y="9" width="17" height="11.5" rx="1.5"/><path d="M3.5 13.5h17M8 17h3M8 3.5c0 1.3 1.2 1.3 1.2 2.6S8 7.4 8 8.7M12 3.5c0 1.3 1.2 1.3 1.2 2.6S12 7.4 12 8.7M16 3.5c0 1.3 1.2 1.3 1.2 2.6S16 7.4 16 8.7"/></symbol>
+    <symbol id="i-lavadora" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 7.5h16M7 5.2h2"/><circle cx="12" cy="14" r="4.3"/><path d="M9.5 14.5c1 .9 2.2.9 3.4 0s2-.9 2.5-.3"/></symbol>
+    <symbol id="i-cama" viewBox="0 0 24 24"><path d="M3 19V6M21 19v-6a2 2 0 0 0-2-2H10v6M3 15h18M3 13h7"/><rect x="5" y="9" width="4" height="3" rx="1.2"/></symbol>
+    <symbol id="i-bano" viewBox="0 0 24 24"><path d="M3 12h18v2.5A5.5 5.5 0 0 1 15.5 20h-7A5.5 5.5 0 0 1 3 14.5zM7 20l-1 1.5M17 20l1 1.5M6 12V5.5A2 2 0 0 1 8 3.5c1.1 0 2 .8 2 2"/><path d="M8.6 7.4h2.8"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 20.5h8M12 17v3.5"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 9.5a14 14 0 0 1 19 0M5.8 12.8a9.4 9.4 0 0 1 12.4 0M9 16a4.6 4.6 0 0 1 6 0"/><circle cx="12" cy="19.2" r=".9"/></symbol>
+    <symbol id="i-perro" viewBox="0 0 24 24"><path d="M5 20.5v-7l-1.8-2.6c-.6-.9-.3-2 .6-2.5L6 7.2 7.2 4l1.6 2.6h2.1c1.2 0 2.1 1 2.1 2.1v2.4h5.2a2.3 2.3 0 0 1 2.3 2.3v7.1M9.5 20.5v-4.3M16.5 20.5v-4.3M20.5 12.6l1.3-2.3"/><circle cx="7.3" cy="9.3" r=".6"/></symbol>
+    <symbol id="i-coche" viewBox="0 0 24 24"><path d="M4 16.5V12l2-5a1.6 1.6 0 0 1 1.5-1h9a1.6 1.6 0 0 1 1.5 1l2 5v4.5M3.5 12h17M4 16.5h16"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/></symbol>
+    <symbol id="i-barbacoa" viewBox="0 0 24 24"><path d="M3.5 10.5h17a8.5 8.5 0 0 1-17 0zM8 17.5 6 21.5M16 17.5l2 4M12 19v2.5M3 10.5h18"/><path d="M8.5 7.5c0-1.2 1-1.2 1-2.4S8.5 3.9 8.5 2.7M12 7.5c0-1.2 1-1.2 1-2.4S12 3.9 12 2.7M15.5 7.5c0-1.2 1-1.2 1-2.4s-1-1.2-1-2.4"/></symbol>
+    <!-- la bienvenida -->
+    <symbol id="i-huevos" viewBox="0 0 24 24"><path d="M3 14.5h18l-1.5 5a2 2 0 0 1-1.9 1.5H6.4a2 2 0 0 1-1.9-1.5z"/><path d="M6.2 14.3C5.6 13.6 5.3 12.6 5.3 11.6c0-2.6 1.5-5.1 3.2-5.1s3.2 2.5 3.2 5.1c0 1-.3 2-.9 2.7M12.4 14.3c-.6-.7-.9-1.7-.9-2.9 0-3 1.7-5.8 3.6-5.8s3.6 2.8 3.6 5.8c0 1.2-.3 2.2-.9 2.9"/></symbol>
+    <symbol id="i-miel" viewBox="0 0 24 24"><path d="M6.5 8.5h11v10a2.5 2.5 0 0 1-2.5 2.5H9a2.5 2.5 0 0 1-2.5-2.5zM7.5 8.5V6h9v2.5M6 6h12"/><path d="M9.5 13.5l1.3-.8 1.3.8v1.5l-1.3.8-1.3-.8zM12.1 13.5l1.3-.8 1.3.8v1.5l-1.3.8-1.3-.8zM10.8 15.8l1.3-.8 1.3.8v1.5l-1.3.8-1.3-.8z"/><path d="M14 3.5c1.6 0 2.2 1.2 2.2 2.5"/></symbol>
+    <symbol id="i-huerto" viewBox="0 0 24 24"><path d="M2.5 20.5h19M12 20.5v-9M12 11.5C12 7.8 9.4 5 5.5 5c0 3.8 2.6 6.5 6.5 6.5zM12 14c0-3.2 2.4-5.6 6-5.6 0 3.2-2.4 5.6-6 5.6z"/><path d="M5 20.5c.3-1.3 1.2-2 2.5-2s2.2.7 2.5 2M14 20.5c.3-1.3 1.2-2 2.5-2s2.2.7 2.5 2"/></symbol>
+    <symbol id="i-lena" viewBox="0 0 24 24"><rect x="2.5" y="13" width="19" height="4.5" rx="2.25"/><rect x="5" y="7.5" width="14" height="4.5" rx="2.25" transform="rotate(-8 12 9.75)"/><circle cx="19.2" cy="15.25" r="1.2"/><circle cx="17" cy="8.8" r="1.1"/><path d="M5 15.2h6M7.5 9.7l5-.7"/></symbol>
+    <!-- de uso -->
+    <symbol id="i-tel" viewBox="0 0 24 24"><path d="M5 3.5h3l1.6 4.2-2 1.4a11 11 0 0 0 7.3 7.3l1.4-2 4.2 1.6v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7a2 2 0 0 1 2-2.2z"/></symbol>
+    <symbol id="i-correo" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-abajo" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-ant" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-sig" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5l5.5-2.5 6 2.5 5.5-2.5v13.5l-5.5 2.5-6-2.5-5.5 2.5zM9 4v13.5M15 6.5V20"/></symbol>
+    <symbol id="i-aviso" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v6M12 16.3v.2"/></symbol>
+    <symbol id="i-movil" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2" transform="rotate(-14 12 12)"/><path d="M2.5 9.5c.8-1.5 2.1-2.6 3.6-3.2M21.5 14.5c-.8 1.5-2.1 2.6-3.6 3.2"/></symbol>
+    <symbol id="i-hoja" viewBox="0 0 24 24"><path d="M12 21.5V8M12 8c0-2.4 1-4.2 1-5.5M12 11.5l-4.5-3.2M12 11.5l4.5-3.2M12 15.5l-5-3M12 15.5l5-3"/><path d="M7.5 8.3c-1.6-.4-2.7-1.5-3-3 1.6-.2 2.8.4 3 3zM16.5 8.3c1.6-.4 2.7-1.5 3-3-1.6-.2-2.8.4-3 3zM7 12.5c-1.7-.2-2.9-1.2-3.3-2.7 1.6-.3 2.9.2 3.3 2.7zM17 12.5c1.7-.2 2.9-1.2 3.3-2.7-1.6-.3-2.9.2-3.3 2.7z"/></symbol>
+  </defs>
+</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="rotulo" viewBox="-12 -200 736.5 296">
+  <path class="r-monte" d="M98 -101C106.67 -104.67 132.17 -116.5 150 -123C167.83 -129.5 187.5 -139 205 -140C222.5 -141 239.17 -133.67 255 -129C270.83 -124.33 282.5 -112.17 300 -112C317.5 -111.83 340 -122 360 -128C380 -134 403 -145.5 420 -148C437 -150.5 450.04 -146.5 462 -143C473.96 -139.5 486.79 -129.67 491.75 -127"/><path class="r-letras" d="M86.2 -80.37A47.25 47.25 0 1 0 86.2 -19.63M104.75 -35A32.25 32.25 0 1 0 169.25 -35A32.25 32.25 0 1 0 104.75 -35ZM169.25 -70V0M225.5 -58C222 -64.5 215.5 -67.25 207.5 -67.25C197 -67.25 190 -61.5 190 -53C190 -43.5 198 -40 207 -37.5C217 -34.8 225.5 -31 225.5 -19.5C225.5 -9 217 -2.75 206.5 -2.75C197.5 -2.75 190.5 -7 187.5 -14M243.75 -35A32.25 32.25 0 1 0 308.25 -35A32.25 32.25 0 1 0 243.75 -35ZM308.25 -70V0M361.75 0V-100M359 -97.25H411M361.75 -52H403M426.75 0V-70M426.75 -38C426.75 -57 437 -67.25 455 -67.25M469.75 -35H534.25A32.25 32.25 0 1 0 525.97 -13.42M572.5 -70L630.5 0M630.5 -70L572.5 0M644.25 -35H708.75A32.25 32.25 0 1 0 700.47 -13.42"/><path class="r-i" d="M554.75 0V-88"/><path class="r-copa" d="M626.4 -120C626.96 -117.01 626.44 -113.64 625.15 -110.8C623.86 -107.95 620.64 -105.46 618.69 -102.93C616.74 -100.41 614.71 -98.27 613.44 -95.63C612.17 -92.99 612.24 -89.14 611.08 -87.09C609.93 -85.03 608.76 -84.56 606.53 -83.29C604.3 -82.02 600.75 -80.42 597.69 -79.45C594.63 -78.48 591.09 -78.27 588.16 -77.47C585.22 -76.67 582.73 -75.66 580.07 -74.63C577.42 -73.61 574.92 -72.4 572.22 -71.32C569.52 -70.24 566.78 -69.36 563.87 -68.13C560.95 -66.89 558.01 -65.18 554.75 -63.9C551.49 -62.63 547.72 -60.69 544.29 -60.47C540.85 -60.25 537.05 -60.99 534.14 -62.58C531.24 -64.18 529.06 -67.65 526.87 -70.06C524.68 -72.46 523.24 -75.21 521 -77.03C518.76 -78.86 516.01 -79.65 513.44 -81C510.87 -82.35 507.75 -83.93 505.58 -85.14C503.4 -86.34 501.84 -86.44 500.38 -88.24C498.92 -90.04 498.02 -93.39 496.81 -95.95C495.61 -98.5 494.15 -100.94 493.16 -103.56C492.17 -106.18 491.44 -108.91 490.9 -111.65C490.36 -114.39 490.53 -117.14 489.93 -120C489.32 -122.86 488.17 -125.7 487.27 -128.82C486.38 -131.94 484.42 -135.6 484.55 -138.74C484.68 -141.88 485.76 -145.32 488.06 -147.69C490.36 -150.05 494.92 -151.51 498.35 -152.95C501.77 -154.39 505.8 -154.92 508.62 -156.34C511.44 -157.75 513.19 -159.54 515.26 -161.43C517.33 -163.32 518.89 -165.77 521.05 -167.68C523.2 -169.58 525.67 -171.24 528.19 -172.87C530.71 -174.51 533.37 -176.07 536.18 -177.48C538.99 -178.9 541.95 -180.64 545.05 -181.35C548.14 -182.05 551.57 -182.09 554.75 -181.73C557.93 -181.38 560.98 -179.79 564.11 -179.2C567.24 -178.6 570.2 -178.27 573.53 -178.15C576.87 -178.03 580.81 -179.05 584.13 -178.49C587.45 -177.92 591.09 -176.88 593.45 -174.75C595.81 -172.61 597.07 -168.76 598.28 -165.67C599.49 -162.58 599.61 -158.93 600.7 -156.2C601.79 -153.46 603.19 -151.43 604.81 -149.25C606.43 -147.07 608.57 -145.27 610.42 -143.11C612.27 -140.96 614 -138.71 615.89 -136.32C617.78 -133.93 620.03 -131.48 621.78 -128.76C623.53 -126.04 625.84 -122.99 626.4 -120Z"/>
+</symbol></defs></svg>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- ============ cabecera fija: el rótulo pequeño (aparece cuando el grande de la portada se ha ido), la navegación y
+     «Ver fechas». Transparente sobre la portada; con fondo en cuanto se baja (.sc) ============ -->
+<header class="cab" id="cab">
+  <div class="cab__in">
+    <a class="marca" href="./" aria-label="Casa Freixe, a la portada">
+      <svg class="marca__rotulo" viewBox="-12 -200 736 296" aria-hidden="true" focusable="false"><use href="#rotulo"/></svg>
+    </a>
+    <nav class="cab__nav" aria-label="Principal">
+      <a href="#casa">La casa</a>
+      <a href="#apartamentos">Apartamentos</a>
+      <a href="#dentro">Por dentro</a>
+      <a href="#lugar">Desde la puerta</a>
+      <a href="#alrededor">Alrededor</a>
+    </nav>
+    <a class="btn btn--acento cab__reservar" href="#reservar">Ver fechas</a>
+    <button class="cab__menu" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil"><span class="vh">Menú</span><i></i><i></i></button>
+  </div>
+  <div class="menu-movil" id="menu-movil" aria-hidden="true">
+    <nav aria-label="Menú">
+      <a href="#casa"><small>Piedra, pizarra y madera</small>La casa</a>
+      <a href="#apartamentos"><small>Freixe I y Freixe II</small>Apartamentos</a>
+      <a href="#dentro"><small>Estancia por estancia</small>Por dentro</a>
+      <a href="#lugar"><small>El valle en 3D</small>Desde la puerta</a>
+      <a href="#alrededor"><small>Kilómetros y rutas</small>Alrededor</a>
+      <a href="#reservar"><small>Calendario y precios</small>Ver fechas</a>
+      <a href="#contacto"><small>Barcia, Santa Eulalia de Oscos</small>Contacto</a>
+    </nav>
+    <p class="menu-movil__tel"><a class="cifra" href="tel:+34985621215">985 621 215</a><a class="cifra" href="tel:+34669924374">669 924 374</a><a href="mailto:info@casafreixe.com">info@casafreixe.com</a></p>
+  </div>
+</header>
+
+<main id="principal">
+
+  <!-- ==================================================================================================
+       1. PORTADA «El punto de la i» (js/portada.js, Freixe.portada). Su rótulo redibujado en SVG (construir.mjs): la
+       línea de monte se traza, la i crece y el punto de la i es un fresno vivo, dibujado en un <canvas> encima, con
+       hojas compuestas una a una y en la estación de hoy (js/fresno.js). El puntero (o el dedo en horizontal, o el
+       móvil inclinado, tras pedir permiso) es viento. Al bajar caen hojas hacia «La casa».
+       Sin JS, con movimiento reducido o si el módulo falla: el rótulo con la copa verde de su logo. El LCP es la frase,
+       que no depende de ninguna animación.
+       ================================================================================================== -->
+  <section class="portada" id="portada" aria-labelledby="t-portada">
+    <div class="portada__lienzo" data-modulo="portada"></div>
+    <div class="portada__in env">
+      <h1 class="portada__rotulo" id="t-portada">
+        <svg class="rotulo rotulo--portada" id="rotulo-portada" viewBox="-12 -200 736.5 296" aria-hidden="true" focusable="false" data-i="554.75 -88" data-copa="554.75 -120 66 60" data-trazo="5.5" data-ancho="711.5">
+          <path class="r-monte" pathLength="1" d="M98 -101C106.67 -104.67 132.17 -116.5 150 -123C167.83 -129.5 187.5 -139 205 -140C222.5 -141 239.17 -133.67 255 -129C270.83 -124.33 282.5 -112.17 300 -112C317.5 -111.83 340 -122 360 -128C380 -134 403 -145.5 420 -148C437 -150.5 450.04 -146.5 462 -143C473.96 -139.5 486.79 -129.67 491.75 -127"/>
+          <path class="r-letras" d="M86.2 -80.37A47.25 47.25 0 1 0 86.2 -19.63M104.75 -35A32.25 32.25 0 1 0 169.25 -35A32.25 32.25 0 1 0 104.75 -35ZM169.25 -70V0M225.5 -58C222 -64.5 215.5 -67.25 207.5 -67.25C197 -67.25 190 -61.5 190 -53C190 -43.5 198 -40 207 -37.5C217 -34.8 225.5 -31 225.5 -19.5C225.5 -9 217 -2.75 206.5 -2.75C197.5 -2.75 190.5 -7 187.5 -14M243.75 -35A32.25 32.25 0 1 0 308.25 -35A32.25 32.25 0 1 0 243.75 -35ZM308.25 -70V0M361.75 0V-100M359 -97.25H411M361.75 -52H403M426.75 0V-70M426.75 -38C426.75 -57 437 -67.25 455 -67.25M469.75 -35H534.25A32.25 32.25 0 1 0 525.97 -13.42M572.5 -70L630.5 0M630.5 -70L572.5 0M644.25 -35H708.75A32.25 32.25 0 1 0 700.47 -13.42"/>
+          <path class="r-i" id="rotulo-i" pathLength="1" d="M554.75 0V-88"/>
+          <path class="r-copa" d="M626.4 -120C626.96 -117.01 626.44 -113.64 625.15 -110.8C623.86 -107.95 620.64 -105.46 618.69 -102.93C616.74 -100.41 614.71 -98.27 613.44 -95.63C612.17 -92.99 612.24 -89.14 611.08 -87.09C609.93 -85.03 608.76 -84.56 606.53 -83.29C604.3 -82.02 600.75 -80.42 597.69 -79.45C594.63 -78.48 591.09 -78.27 588.16 -77.47C585.22 -76.67 582.73 -75.66 580.07 -74.63C577.42 -73.61 574.92 -72.4 572.22 -71.32C569.52 -70.24 566.78 -69.36 563.87 -68.13C560.95 -66.89 558.01 -65.18 554.75 -63.9C551.49 -62.63 547.72 -60.69 544.29 -60.47C540.85 -60.25 537.05 -60.99 534.14 -62.58C531.24 -64.18 529.06 -67.65 526.87 -70.06C524.68 -72.46 523.24 -75.21 521 -77.03C518.76 -78.86 516.01 -79.65 513.44 -81C510.87 -82.35 507.75 -83.93 505.58 -85.14C503.4 -86.34 501.84 -86.44 500.38 -88.24C498.92 -90.04 498.02 -93.39 496.81 -95.95C495.61 -98.5 494.15 -100.94 493.16 -103.56C492.17 -106.18 491.44 -108.91 490.9 -111.65C490.36 -114.39 490.53 -117.14 489.93 -120C489.32 -122.86 488.17 -125.7 487.27 -128.82C486.38 -131.94 484.42 -135.6 484.55 -138.74C484.68 -141.88 485.76 -145.32 488.06 -147.69C490.36 -150.05 494.92 -151.51 498.35 -152.95C501.77 -154.39 505.8 -154.92 508.62 -156.34C511.44 -157.75 513.19 -159.54 515.26 -161.43C517.33 -163.32 518.89 -165.77 521.05 -167.68C523.2 -169.58 525.67 -171.24 528.19 -172.87C530.71 -174.51 533.37 -176.07 536.18 -177.48C538.99 -178.9 541.95 -180.64 545.05 -181.35C548.14 -182.05 551.57 -182.09 554.75 -181.73C557.93 -181.38 560.98 -179.79 564.11 -179.2C567.24 -178.6 570.2 -178.27 573.53 -178.15C576.87 -178.03 580.81 -179.05 584.13 -178.49C587.45 -177.92 591.09 -176.88 593.45 -174.75C595.81 -172.61 597.07 -168.76 598.28 -165.67C599.49 -162.58 599.61 -158.93 600.7 -156.2C601.79 -153.46 603.19 -151.43 604.81 -149.25C606.43 -147.07 608.57 -145.27 610.42 -143.11C612.27 -140.96 614 -138.71 615.89 -136.32C617.78 -133.93 620.03 -131.48 621.78 -128.76C623.53 -126.04 625.84 -122.99 626.4 -120Z"/>
+          <path class="r-rubrica" pathLength="1" d="M150 50C190 30 236 32 238 46C240 60 206 62 204 50C202 36 250 34 300 44C350 54 400 58 448 54"/>
+          <text class="r-cursiva" x="707.5" y="72" text-anchor="end">Turismo Rural</text>
+        </svg>
+        <span class="vh">Casa Freixe, turismo rural</span>
+      </h1>
+      <div class="portada__pie">
+        <div class="portada__txt">
+          <p class="portada__frase">Dos apartamentos rurales de piedra y pizarra en Barcia, Santa Eulalia de Oscos. Reserva de la Biosfera de Oscos-Eo.</p>
+          <p class="portada__acc"><a class="btn btn--acento" href="#reservar">Ver fechas</a><a class="btn btn--linea portada__tel" href="tel:+34985621215"><svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-tel" width="24" height="24"/></svg><span class="cifra">985 621 215</span></a></p>
+        </div>
+        <div class="portada__lamina">
+          <p class="portada__estacion" id="portada-estacion">Freixe es fresno: el árbol que hace de punto de la i.</p>
+          <button class="portada__inclinar" id="portada-inclinar" type="button" hidden><svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-movil" width="24" height="24"/></svg>Mover con el móvil</button>
+        </div>
+      </div>
+      <a class="portada__guia" id="portada-guia" href="#casa"><svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-abajo" width="24" height="24"/></svg><span>La casa</span></a>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       2. LA CASA: cifras grandes y la casa por fuera. Freixe = fresno, con la ramita de hoy (solo en la versión
+       «Fresno»; en la sobria, el dato de la estación en letra).
+       ================================================================================================== -->
+  <section class="casa" id="casa" aria-labelledby="t-casa">
+    <div class="env casa__in">
+      <div class="casa__txt">
+        <h2 class="sec-tit" id="t-casa">Piedra, pizarra y madera en una aldea de cuatro vecinos</h2>
+        <p class="casa__intro">Una casa tradicional asturiana, de piedra, restaurada en dos apartamentos independientes. Es de una familia ganadera de Barcia, abre todo el año y admite animales.</p>
+        <dl class="casa__cifras">
+          <div><dt>Apartamentos</dt><dd class="cifra">2</dd></div>
+          <div><dt>Plazas, con la supletoria</dt><dd class="cifra">5</dd></div>
+          <div><dt>Chimeneas de leña, una en cada uno</dt><dd class="cifra">2</dd></div>
+          <div><dt>Abierto</dt><dd class="casa__todo">todo el año</dd></div>
+        </dl>
+        <div class="casa__nombre">
+          <canvas class="ramita" data-ramita="hoy" width="120" height="120" aria-hidden="true"></canvas>
+          <p><b>Freixe</b> es fresno. Es el árbol que hace de punto de la i en su rótulo, y aquí sale como está hoy en Barcia: <span class="casa__hoy" data-estacion-texto>en su estación</span>.</p>
+        </div>
+      </div>
+      <figure class="casa__foto">
+        <picture data-foto="casa-fachada"><source type="image/webp" srcset="img/fotos/casa-fachada-400.webp 400w, img/fotos/casa-fachada-708.webp 708w" sizes="(max-width: 899px) 92vw, 46vw"><img src="img/fotos/casa-fachada-400.jpg" srcset="img/fotos/casa-fachada-400.jpg 400w, img/fotos/casa-fachada-708.jpg 708w" sizes="(max-width: 899px) 92vw, 46vw" width="708" height="449" style="--max:708px" alt="La casa de piedra con tejado de pizarra y porche de madera, en Barcia" loading="lazy" decoding="async"></picture>
+        <figcaption>La casa, por fuera: piedra, tejado de pizarra y el porche de madera.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       3. LOS DOS APARTAMENTOS, uno junto al otro, cada uno con su galería (visor por nombre), y lo que tienen los dos
+       (iconos dibujados). En la sobria, además, la tabla «De un vistazo».
+       ================================================================================================== -->
+  <section class="aptos" id="apartamentos" aria-labelledby="t-aptos">
+    <div class="env">
+      <h2 class="sec-tit" id="t-aptos">Freixe I y Freixe II, uno junto al otro</h2>
+      <p class="sec-intro">Dos apartamentos independientes, cada uno con su puerta, su chimenea y su cocina. Para dos personas; uno de los dos admite una cama supletoria.</p>
+      <div class="aptos__par">
+      <article class="apto apto--i" id="apto-i" aria-labelledby="t-apto-i">
+        <p class="apto__num" aria-hidden="true">I</p>
+        <h3 class="apto__tit" id="t-apto-i">Freixe I</h3>
+        <p class="apto__txt">De dos plantas y con entrada propia: abajo la cocina-salón con la chimenea; arriba, el dormitorio de matrimonio, bajo las vigas.</p>
+        <dl class="apto__datos">
+          <div><dt>Plazas</dt><dd><span class="cifra">2</span></dd></div>
+          <div><dt>Plantas</dt><dd>Dos plantas</dd></div>
+          <div><dt>Chimenea de leña</dt><dd>En la cocina-salón</dd></div>
+          <div><dt>La noche</dt><dd><span class="cifra">65</span> o <span class="cifra">70</span> € <small>+ IVA<sup>*</sup></small></dd></div>
+        </dl>
+        <div class="apto__fotos" role="group" aria-label="Fotos de Freixe I">
+          <a class="foto-btn" href="img/fotos/i-cocina-chimenea-800.jpg" data-visor="i-cocina-chimenea" data-grupo="apto-i" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Cocina-salón de Freixe I con la chimenea encendida y la mesa redonda"><picture data-foto="i-cocina-chimenea"><source type="image/webp" srcset="img/fotos/i-cocina-chimenea-400.webp 400w, img/fotos/i-cocina-chimenea-800.webp 800w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/i-cocina-chimenea-400.jpg" srcset="img/fotos/i-cocina-chimenea-400.jpg 400w, img/fotos/i-cocina-chimenea-800.jpg 800w" sizes="(max-width: 699px) 70vw, 22vw" width="800" height="530" style="--max:800px" alt="Cocina-salón de Freixe I con la chimenea encendida y la mesa redonda" loading="lazy" decoding="async"></picture></a>
+          <a class="foto-btn" href="img/fotos/i-escalera-530.jpg" data-visor="i-escalera" data-grupo="apto-i" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Escalera de madera de Freixe I entre muros de piedra"><picture data-foto="i-escalera"><source type="image/webp" srcset="img/fotos/i-escalera-400.webp 400w, img/fotos/i-escalera-530.webp 530w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/i-escalera-400.jpg" srcset="img/fotos/i-escalera-400.jpg 400w, img/fotos/i-escalera-530.jpg 530w" sizes="(max-width: 699px) 70vw, 22vw" width="530" height="800" style="--max:530px" alt="Escalera de madera de Freixe I entre muros de piedra" loading="lazy" decoding="async"></picture></a>
+          <a class="foto-btn" href="img/fotos/i-dormitorio-buhardilla-530.jpg" data-visor="i-dormitorio-buhardilla" data-grupo="apto-i" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Dormitorio de Freixe I bajo el tejado, con la piedra y las vigas"><picture data-foto="i-dormitorio-buhardilla"><source type="image/webp" srcset="img/fotos/i-dormitorio-buhardilla-400.webp 400w, img/fotos/i-dormitorio-buhardilla-530.webp 530w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/i-dormitorio-buhardilla-400.jpg" srcset="img/fotos/i-dormitorio-buhardilla-400.jpg 400w, img/fotos/i-dormitorio-buhardilla-530.jpg 530w" sizes="(max-width: 699px) 70vw, 22vw" width="530" height="800" style="--max:530px" alt="Dormitorio de Freixe I bajo el tejado, con la piedra y las vigas" loading="lazy" decoding="async"></picture></a>
+          <a class="foto-btn" href="img/fotos/i-dormitorio-naranja-800.jpg" data-visor="i-dormitorio-naranja" data-grupo="apto-i" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Dormitorio de Freixe I: cama de matrimonio y armario de madera"><picture data-foto="i-dormitorio-naranja"><source type="image/webp" srcset="img/fotos/i-dormitorio-naranja-400.webp 400w, img/fotos/i-dormitorio-naranja-800.webp 800w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/i-dormitorio-naranja-400.jpg" srcset="img/fotos/i-dormitorio-naranja-400.jpg 400w, img/fotos/i-dormitorio-naranja-800.jpg 800w" sizes="(max-width: 699px) 70vw, 22vw" width="800" height="530" style="--max:800px" alt="Dormitorio de Freixe I: cama de matrimonio y armario de madera" loading="lazy" decoding="async"></picture></a>
+          <a class="foto-btn" href="img/fotos/i-bano-530.jpg" data-visor="i-bano" data-grupo="apto-i" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Baño de Freixe I con lavabo y bañera"><picture data-foto="i-bano"><source type="image/webp" srcset="img/fotos/i-bano-400.webp 400w, img/fotos/i-bano-530.webp 530w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/i-bano-400.jpg" srcset="img/fotos/i-bano-400.jpg 400w, img/fotos/i-bano-530.jpg 530w" sizes="(max-width: 699px) 70vw, 22vw" width="530" height="800" style="--max:530px" alt="Baño de Freixe I con lavabo y bañera" loading="lazy" decoding="async"></picture></a>
+        </div>
+        <a class="btn btn--acento" href="#reservar" data-reservar="i">Ver fechas<span class="vh"> de Freixe I</span></a>
+      </article>
+      <article class="apto apto--ii" id="apto-ii" aria-labelledby="t-apto-ii">
+        <p class="apto__num" aria-hidden="true">II</p>
+        <h3 class="apto__tit" id="t-apto-ii">Freixe II</h3>
+        <p class="apto__txt">Con entrada propia, de piedra y madera: cocina-salón con chimenea de leña y el dormitorio de matrimonio con la pared de piedra a la vista.</p>
+        <dl class="apto__datos">
+          <div><dt>Plazas</dt><dd><span class="cifra">3</span> <small class="es-pendiente">con supletoria, por confirmar</small></dd></div>
+          <div><dt>Plantas</dt><dd><span class="es-pendiente">Por confirmar</span></dd></div>
+          <div><dt>Chimenea de leña</dt><dd>En la cocina-salón</dd></div>
+          <div><dt>La noche</dt><dd><span class="cifra">65</span> o <span class="cifra">70</span> € <small>+ IVA<sup>*</sup></small></dd></div>
+        </dl>
+        <div class="apto__fotos" role="group" aria-label="Fotos de Freixe II">
+          <a class="foto-btn" href="img/fotos/ii-cocina-chimenea-800.jpg" data-visor="ii-cocina-chimenea" data-grupo="apto-ii" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Cocina-salón de Freixe II: muebles de madera, campana roja y la chimenea encendida"><picture data-foto="ii-cocina-chimenea"><source type="image/webp" srcset="img/fotos/ii-cocina-chimenea-400.webp 400w, img/fotos/ii-cocina-chimenea-800.webp 800w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/ii-cocina-chimenea-400.jpg" srcset="img/fotos/ii-cocina-chimenea-400.jpg 400w, img/fotos/ii-cocina-chimenea-800.jpg 800w" sizes="(max-width: 699px) 70vw, 22vw" width="800" height="530" style="--max:800px" alt="Cocina-salón de Freixe II: muebles de madera, campana roja y la chimenea encendida" loading="lazy" decoding="async"></picture></a>
+          <a class="foto-btn" href="img/fotos/ii-chimenea-fuego-530.jpg" data-visor="ii-chimenea-fuego" data-grupo="apto-ii" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: La chimenea de Freixe II encendida, con la leña al lado"><picture data-foto="ii-chimenea-fuego"><source type="image/webp" srcset="img/fotos/ii-chimenea-fuego-400.webp 400w, img/fotos/ii-chimenea-fuego-530.webp 530w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/ii-chimenea-fuego-400.jpg" srcset="img/fotos/ii-chimenea-fuego-400.jpg 400w, img/fotos/ii-chimenea-fuego-530.jpg 530w" sizes="(max-width: 699px) 70vw, 22vw" width="530" height="800" style="--max:530px" alt="La chimenea de Freixe II encendida, con la leña al lado" loading="lazy" decoding="async"></picture></a>
+          <a class="foto-btn" href="img/fotos/ii-dormitorio-piedra-800.jpg" data-visor="ii-dormitorio-piedra" data-grupo="apto-ii" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Dormitorio de Freixe II con pared de piedra y ventana"><picture data-foto="ii-dormitorio-piedra"><source type="image/webp" srcset="img/fotos/ii-dormitorio-piedra-400.webp 400w, img/fotos/ii-dormitorio-piedra-800.webp 800w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/ii-dormitorio-piedra-400.jpg" srcset="img/fotos/ii-dormitorio-piedra-400.jpg 400w, img/fotos/ii-dormitorio-piedra-800.jpg 800w" sizes="(max-width: 699px) 70vw, 22vw" width="800" height="530" style="--max:800px" alt="Dormitorio de Freixe II con pared de piedra y ventana" loading="lazy" decoding="async"></picture></a>
+          <a class="foto-btn" href="img/fotos/ii-dormitorio-libro-800.jpg" data-visor="ii-dormitorio-libro" data-grupo="apto-ii" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Cama de Freixe II con un libro abierto y la barandilla de madera"><picture data-foto="ii-dormitorio-libro"><source type="image/webp" srcset="img/fotos/ii-dormitorio-libro-400.webp 400w, img/fotos/ii-dormitorio-libro-800.webp 800w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/ii-dormitorio-libro-400.jpg" srcset="img/fotos/ii-dormitorio-libro-400.jpg 400w, img/fotos/ii-dormitorio-libro-800.jpg 800w" sizes="(max-width: 699px) 70vw, 22vw" width="800" height="530" style="--max:800px" alt="Cama de Freixe II con un libro abierto y la barandilla de madera" loading="lazy" decoding="async"></picture></a>
+          <a class="foto-btn" href="img/fotos/ii-bano-530.jpg" data-visor="ii-bano" data-grupo="apto-ii" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Baño de Freixe II con lavabo y ventana"><picture data-foto="ii-bano"><source type="image/webp" srcset="img/fotos/ii-bano-400.webp 400w, img/fotos/ii-bano-530.webp 530w" sizes="(max-width: 699px) 70vw, 22vw"><img src="img/fotos/ii-bano-400.jpg" srcset="img/fotos/ii-bano-400.jpg 400w, img/fotos/ii-bano-530.jpg 530w" sizes="(max-width: 699px) 70vw, 22vw" width="530" height="800" style="--max:530px" alt="Baño de Freixe II con lavabo y ventana" loading="lazy" decoding="async"></picture></a>
+        </div>
+        <a class="btn btn--acento" href="#reservar" data-reservar="ii">Ver fechas<span class="vh"> de Freixe II</span></a>
+      </article>
+      </div>
+      <p class="aptos__nota"><sup>*</sup> Precio por apartamento y noche de su web (2014): 65 € en temporada baja y 70 € en alta, IVA (10 %) aparte. <span class="es-pendiente">Tarifa vigente por confirmar.</span> Qué fotos son de cada apartamento sale de su web: por confirmar con la casa.</p>
+      <div class="vistazo" id="vistazo">
+        <h3 class="vistazo__tit">De un vistazo</h3>
+        <div class="vistazo__caja" role="group" aria-label="Tabla comparativa de los dos apartamentos">
+          <table class="vistazo__tabla">
+            <caption class="vh">Freixe I y Freixe II comparados</caption>
+            <thead><tr><th scope="col"><span class="vh">Dato</span></th><th scope="col">Freixe I</th><th scope="col">Freixe II</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Plazas</th><td>2</td><td>3 (con supletoria)</td></tr>
+              <tr><th scope="row">Plantas</th><td>Dos plantas</td><td>Por confirmar</td></tr>
+              <tr><th scope="row">Dormitorio</th><td>De matrimonio</td><td>De matrimonio</td></tr>
+              <tr><th scope="row">Chimenea de leña</th><td>Sí</td><td>Sí</td></tr>
+              <tr><th scope="row">Baño completo</th><td>Sí</td><td>Sí</td></tr>
+              <tr><th scope="row">Entrada</th><td>Independiente</td><td>Independiente</td></tr>
+              <tr><th scope="row">Noche en temporada baja</th><td>65 € + IVA</td><td>65 € + IVA</td></tr>
+              <tr><th scope="row">Noche en temporada alta</th><td>70 € + IVA</td><td>70 € + IVA</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="vistazo__nota">Supletoria en Freixe II, plantas de Freixe II y tarifa vigente: por confirmar con la casa.</p>
+      </div>
+      <div class="servicios">
+        <h3 class="servicios__tit">En los dos</h3>
+        <ul class="servicios__lista">
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-chimenea" width="24" height="24"/></svg><b>Chimenea con leña</b><span>En la cocina-salón, con la leña a tu disposición.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-calefaccion" width="24" height="24"/></svg><b>Calefacción central</b><span>En toda la casa, todo el año.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-cocina" width="24" height="24"/></svg><b>Cocina equipada</b><span>Nevera, microondas, tostador, batidora y menaje completo.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-lavadora" width="24" height="24"/></svg><b>Lavadora y plancha</b><span>Para estancias largas.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-cama" width="24" height="24"/></svg><b>Dormitorio de matrimonio</b><span>Con ropa de cama y de baño incluidas.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-bano" width="24" height="24"/></svg><b>Baño completo</b><span>Uno en cada apartamento.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-tv" width="24" height="24"/></svg><b>TV y DVD</b><span>En el salón y en el dormitorio.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-wifi" width="24" height="24"/></svg><b>WiFi gratis</b><span>En los dos apartamentos.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-perro" width="24" height="24"/></svg><b>Admite animales</b><span>Huéspedes con perro lo cuentan en sus opiniones.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-coche" width="24" height="24"/></svg><b>Aparcamiento</b><span>Junto a la casa.</span></li>
+          <li><svg class="ico" width="30" height="30" aria-hidden="true"><use href="#i-barbacoa" width="24" height="24"/></svg><b>Barbacoa</b><span>Fuera, para usarla con la leña de la casa.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       4. POR DENTRO, POR ESTANCIAS (data/fotos.json): índice fijo que marca la estancia que se ve, filas de la misma
+       altura sin marcos, visor por nombre de archivo. Fotos a su tamaño real como mucho.
+       ================================================================================================== -->
+  <section class="dentro" id="dentro" aria-labelledby="t-dentro">
+    <div class="env">
+      <h2 class="sec-tit" id="t-dentro">Por dentro, estancia por estancia</h2>
+      <p class="galeria__aviso">Fotos de su web (2014), a su tamaño real como mucho y con una corrección de color suave y común. Pendiente: pedir las originales.</p>
+      <div class="estancias">
+        <nav class="estancias__indice" aria-label="Estancias">
+          <ol>
+            <li><a href="#est-cocina" data-est="cocina" aria-current="true"><span class="estancias__largo">Cocina-salón con chimenea</span><span class="estancias__corto" aria-hidden="true">Cocina</span><span class="estancias__n cifra" aria-hidden="true">7</span></a></li>
+            <li><a href="#est-dormitorio" data-est="dormitorio"><span class="estancias__largo">Dormitorio</span><span class="estancias__corto" aria-hidden="true">Dormir</span><span class="estancias__n cifra" aria-hidden="true">8</span></a></li>
+            <li><a href="#est-bano" data-est="bano"><span class="estancias__largo">Baño</span><span class="estancias__corto" aria-hidden="true">Baño</span><span class="estancias__n cifra" aria-hidden="true">3</span></a></li>
+            <li><a href="#est-escalera" data-est="escalera"><span class="estancias__largo">Escalera y rincones</span><span class="estancias__corto" aria-hidden="true">Escalera</span><span class="estancias__n cifra" aria-hidden="true">3</span></a></li>
+            <li><a href="#est-fuera" data-est="fuera"><span class="estancias__largo">Fuera</span><span class="estancias__corto" aria-hidden="true">Fuera</span><span class="estancias__n cifra" aria-hidden="true">5</span></a></li>
+          </ol>
+        </nav>
+        <div class="estancias__grupos">
+          <section class="estancia" id="est-cocina" aria-labelledby="t-est-cocina">
+            <h3 class="estancia__tit" id="t-est-cocina">Cocina-salón con chimenea</h3>
+            <p class="estancia__txt">La pieza donde se hace la vida: cocina equipada, mesa y la chimenea de leña.</p>
+            <div class="filas">
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/ii-cocina-chimenea-800.jpg" data-visor="ii-cocina-chimenea" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Cocina-salón de Freixe II: muebles de madera, campana roja y la chimenea encendida"><picture data-foto="ii-cocina-chimenea"><source type="image/webp" srcset="img/fotos/ii-cocina-chimenea-400.webp 400w, img/fotos/ii-cocina-chimenea-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-cocina-chimenea-400.jpg" srcset="img/fotos/ii-cocina-chimenea-400.jpg 400w, img/fotos/ii-cocina-chimenea-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Cocina-salón de Freixe II: muebles de madera, campana roja y la chimenea encendida" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/i-cocina-chimenea-800.jpg" data-visor="i-cocina-chimenea" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Cocina-salón de Freixe I con la chimenea encendida y la mesa redonda"><picture data-foto="i-cocina-chimenea"><source type="image/webp" srcset="img/fotos/i-cocina-chimenea-400.webp 400w, img/fotos/i-cocina-chimenea-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-cocina-chimenea-400.jpg" srcset="img/fotos/i-cocina-chimenea-400.jpg 400w, img/fotos/i-cocina-chimenea-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Cocina-salón de Freixe I con la chimenea encendida y la mesa redonda" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+              <figure class="foto" style="--r:1.778;--max:800px"><a class="foto-btn" href="img/fotos/ii-salon-800.jpg" data-visor="ii-salon" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="450" aria-label="Ver más grande: Salón de Freixe II: chimenea, mesa de comedor y sofá"><picture data-foto="ii-salon"><source type="image/webp" srcset="img/fotos/ii-salon-400.webp 400w, img/fotos/ii-salon-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-salon-400.jpg" srcset="img/fotos/ii-salon-400.jpg 400w, img/fotos/ii-salon-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="450" style="--max:800px" alt="Salón de Freixe II: chimenea, mesa de comedor y sofá" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/ii-cocina-sofa-800.jpg" data-visor="ii-cocina-sofa" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Freixe II: la cocina, la mesa y el sofá bajo las vigas"><picture data-foto="ii-cocina-sofa"><source type="image/webp" srcset="img/fotos/ii-cocina-sofa-400.webp 400w, img/fotos/ii-cocina-sofa-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-cocina-sofa-400.jpg" srcset="img/fotos/ii-cocina-sofa-400.jpg 400w, img/fotos/ii-cocina-sofa-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Freixe II: la cocina, la mesa y el sofá bajo las vigas" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/ii-chimenea-fuego-530.jpg" data-visor="ii-chimenea-fuego" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: La chimenea de Freixe II encendida, con la leña al lado"><picture data-foto="ii-chimenea-fuego"><source type="image/webp" srcset="img/fotos/ii-chimenea-fuego-400.webp 400w, img/fotos/ii-chimenea-fuego-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-chimenea-fuego-400.jpg" srcset="img/fotos/ii-chimenea-fuego-400.jpg 400w, img/fotos/ii-chimenea-fuego-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="La chimenea de Freixe II encendida, con la leña al lado" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/ii-cocina-mesa-800.jpg" data-visor="ii-cocina-mesa" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Freixe II: mesa con flores frente a la cocina"><picture data-foto="ii-cocina-mesa"><source type="image/webp" srcset="img/fotos/ii-cocina-mesa-400.webp 400w, img/fotos/ii-cocina-mesa-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-cocina-mesa-400.jpg" srcset="img/fotos/ii-cocina-mesa-400.jpg 400w, img/fotos/ii-cocina-mesa-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Freixe II: mesa con flores frente a la cocina" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/ii-chimenea-puerta-530.jpg" data-visor="ii-chimenea-puerta" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Rincón de la chimenea de Freixe II junto a la puerta"><picture data-foto="ii-chimenea-puerta"><source type="image/webp" srcset="img/fotos/ii-chimenea-puerta-400.webp 400w, img/fotos/ii-chimenea-puerta-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-chimenea-puerta-400.jpg" srcset="img/fotos/ii-chimenea-puerta-400.jpg 400w, img/fotos/ii-chimenea-puerta-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="Rincón de la chimenea de Freixe II junto a la puerta" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+            </div>
+          </section>
+          <section class="estancia" id="est-dormitorio" aria-labelledby="t-est-dormitorio">
+            <h3 class="estancia__tit" id="t-est-dormitorio">Dormitorio</h3>
+            <p class="estancia__txt">Habitación de matrimonio con la piedra a la vista; la supletoria cabe en uno de los dos.</p>
+            <div class="filas">
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/ii-dormitorio-piedra-800.jpg" data-visor="ii-dormitorio-piedra" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Dormitorio de Freixe II con pared de piedra y ventana"><picture data-foto="ii-dormitorio-piedra"><source type="image/webp" srcset="img/fotos/ii-dormitorio-piedra-400.webp 400w, img/fotos/ii-dormitorio-piedra-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-dormitorio-piedra-400.jpg" srcset="img/fotos/ii-dormitorio-piedra-400.jpg 400w, img/fotos/ii-dormitorio-piedra-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Dormitorio de Freixe II con pared de piedra y ventana" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/i-dormitorio-naranja-800.jpg" data-visor="i-dormitorio-naranja" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Dormitorio de Freixe I: cama de matrimonio y armario de madera"><picture data-foto="i-dormitorio-naranja"><source type="image/webp" srcset="img/fotos/i-dormitorio-naranja-400.webp 400w, img/fotos/i-dormitorio-naranja-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-dormitorio-naranja-400.jpg" srcset="img/fotos/i-dormitorio-naranja-400.jpg 400w, img/fotos/i-dormitorio-naranja-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Dormitorio de Freixe I: cama de matrimonio y armario de madera" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/i-dormitorio-buhardilla-530.jpg" data-visor="i-dormitorio-buhardilla" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Dormitorio de Freixe I bajo el tejado, con la piedra y las vigas"><picture data-foto="i-dormitorio-buhardilla"><source type="image/webp" srcset="img/fotos/i-dormitorio-buhardilla-400.webp 400w, img/fotos/i-dormitorio-buhardilla-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-dormitorio-buhardilla-400.jpg" srcset="img/fotos/i-dormitorio-buhardilla-400.jpg 400w, img/fotos/i-dormitorio-buhardilla-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="Dormitorio de Freixe I bajo el tejado, con la piedra y las vigas" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+              <figure class="foto" style="--r:1.956;--max:800px"><a class="foto-btn" href="img/fotos/ii-dormitorio-amarillo-800.jpg" data-visor="ii-dormitorio-amarillo" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="409" aria-label="Ver más grande: Dormitorio de Freixe II con mesillas y la puerta al pasillo"><picture data-foto="ii-dormitorio-amarillo"><source type="image/webp" srcset="img/fotos/ii-dormitorio-amarillo-400.webp 400w, img/fotos/ii-dormitorio-amarillo-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-dormitorio-amarillo-400.jpg" srcset="img/fotos/ii-dormitorio-amarillo-400.jpg 400w, img/fotos/ii-dormitorio-amarillo-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="409" style="--max:800px" alt="Dormitorio de Freixe II con mesillas y la puerta al pasillo" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/ii-dormitorio-ventana-530.jpg" data-visor="ii-dormitorio-ventana" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Dormitorio de Freixe II junto a la ventana"><picture data-foto="ii-dormitorio-ventana"><source type="image/webp" srcset="img/fotos/ii-dormitorio-ventana-400.webp 400w, img/fotos/ii-dormitorio-ventana-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-dormitorio-ventana-400.jpg" srcset="img/fotos/ii-dormitorio-ventana-400.jpg 400w, img/fotos/ii-dormitorio-ventana-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="Dormitorio de Freixe II junto a la ventana" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:1.493;--max:800px"><a class="foto-btn" href="img/fotos/i-dormitorio-armario-800.jpg" data-visor="i-dormitorio-armario" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="536" aria-label="Ver más grande: Dormitorio de Freixe I con la puerta abierta a la escalera de piedra"><picture data-foto="i-dormitorio-armario"><source type="image/webp" srcset="img/fotos/i-dormitorio-armario-400.webp 400w, img/fotos/i-dormitorio-armario-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-dormitorio-armario-400.jpg" srcset="img/fotos/i-dormitorio-armario-400.jpg 400w, img/fotos/i-dormitorio-armario-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="536" style="--max:800px" alt="Dormitorio de Freixe I con la puerta abierta a la escalera de piedra" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/ii-dormitorio-libro-800.jpg" data-visor="ii-dormitorio-libro" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Cama de Freixe II con un libro abierto y la barandilla de madera"><picture data-foto="ii-dormitorio-libro"><source type="image/webp" srcset="img/fotos/ii-dormitorio-libro-400.webp 400w, img/fotos/ii-dormitorio-libro-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-dormitorio-libro-400.jpg" srcset="img/fotos/ii-dormitorio-libro-400.jpg 400w, img/fotos/ii-dormitorio-libro-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Cama de Freixe II con un libro abierto y la barandilla de madera" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/ii-dormitorio-maleta-800.jpg" data-visor="ii-dormitorio-maleta" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Dormitorio de Freixe II con la pared de piedra"><picture data-foto="ii-dormitorio-maleta"><source type="image/webp" srcset="img/fotos/ii-dormitorio-maleta-400.webp 400w, img/fotos/ii-dormitorio-maleta-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-dormitorio-maleta-400.jpg" srcset="img/fotos/ii-dormitorio-maleta-400.jpg 400w, img/fotos/ii-dormitorio-maleta-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Dormitorio de Freixe II con la pared de piedra" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+            </div>
+          </section>
+          <section class="estancia" id="est-bano" aria-labelledby="t-est-bano">
+            <h3 class="estancia__tit" id="t-est-bano">Baño</h3>
+            <p class="estancia__txt">Un baño completo en cada apartamento.</p>
+            <div class="filas">
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/i-bano-530.jpg" data-visor="i-bano" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Baño de Freixe I con lavabo y bañera"><picture data-foto="i-bano"><source type="image/webp" srcset="img/fotos/i-bano-400.webp 400w, img/fotos/i-bano-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-bano-400.jpg" srcset="img/fotos/i-bano-400.jpg 400w, img/fotos/i-bano-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="Baño de Freixe I con lavabo y bañera" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/ii-bano-530.jpg" data-visor="ii-bano" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Baño de Freixe II con lavabo y ventana"><picture data-foto="ii-bano"><source type="image/webp" srcset="img/fotos/ii-bano-400.webp 400w, img/fotos/ii-bano-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-bano-400.jpg" srcset="img/fotos/ii-bano-400.jpg 400w, img/fotos/ii-bano-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="Baño de Freixe II con lavabo y ventana" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/i-dormitorio-puerta-bano-530.jpg" data-visor="i-dormitorio-puerta-bano" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Freixe I: la puerta del baño desde el dormitorio"><picture data-foto="i-dormitorio-puerta-bano"><source type="image/webp" srcset="img/fotos/i-dormitorio-puerta-bano-400.webp 400w, img/fotos/i-dormitorio-puerta-bano-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-dormitorio-puerta-bano-400.jpg" srcset="img/fotos/i-dormitorio-puerta-bano-400.jpg 400w, img/fotos/i-dormitorio-puerta-bano-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="Freixe I: la puerta del baño desde el dormitorio" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+            </div>
+          </section>
+          <section class="estancia" id="est-escalera" aria-labelledby="t-est-escalera">
+            <h3 class="estancia__tit" id="t-est-escalera">Escalera y rincones</h3>
+            <p class="estancia__txt">Escalera de madera entre muros de pizarra, y lo que guarda la casa.</p>
+            <div class="filas">
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/i-escalera-530.jpg" data-visor="i-escalera" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Escalera de madera de Freixe I entre muros de piedra"><picture data-foto="i-escalera"><source type="image/webp" srcset="img/fotos/i-escalera-400.webp 400w, img/fotos/i-escalera-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-escalera-400.jpg" srcset="img/fotos/i-escalera-400.jpg 400w, img/fotos/i-escalera-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="Escalera de madera de Freixe I entre muros de piedra" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/i-escalera-piedra-530.jpg" data-visor="i-escalera-piedra" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: Freixe I: la escalera sube junto al muro de pizarra"><picture data-foto="i-escalera-piedra"><source type="image/webp" srcset="img/fotos/i-escalera-piedra-400.webp 400w, img/fotos/i-escalera-piedra-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-escalera-piedra-400.jpg" srcset="img/fotos/i-escalera-piedra-400.jpg 400w, img/fotos/i-escalera-piedra-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="Freixe I: la escalera sube junto al muro de pizarra" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/i-cantaros-800.jpg" data-visor="i-cantaros" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: Cántaros y una plancha de hierro antigua sobre el muro de piedra"><picture data-foto="i-cantaros"><source type="image/webp" srcset="img/fotos/i-cantaros-400.webp 400w, img/fotos/i-cantaros-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/i-cantaros-400.jpg" srcset="img/fotos/i-cantaros-400.jpg 400w, img/fotos/i-cantaros-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="Cántaros y una plancha de hierro antigua sobre el muro de piedra" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe I</figcaption></figure>
+            </div>
+          </section>
+          <section class="estancia" id="est-fuera" aria-labelledby="t-est-fuera">
+            <h3 class="estancia__tit" id="t-est-fuera">Fuera</h3>
+            <p class="estancia__txt">Piedra, tejado de pizarra y el porche de madera, en el camino de la aldea.</p>
+            <div class="filas">
+              <figure class="foto" style="--r:1.577;--max:708px"><a class="foto-btn" href="img/fotos/casa-fachada-708.jpg" data-visor="casa-fachada" data-grupo="galeria" data-anchos="400,708" data-ancho="708" data-alto="449" aria-label="Ver más grande: La casa de piedra con tejado de pizarra y porche de madera, en Barcia"><picture data-foto="casa-fachada"><source type="image/webp" srcset="img/fotos/casa-fachada-400.webp 400w, img/fotos/casa-fachada-708.webp 708w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/casa-fachada-400.jpg" srcset="img/fotos/casa-fachada-400.jpg 400w, img/fotos/casa-fachada-708.jpg 708w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="708" height="449" style="--max:708px" alt="La casa de piedra con tejado de pizarra y porche de madera, en Barcia" loading="lazy" decoding="async"></picture></a></figure>
+              <figure class="foto" style="--r:1.509;--max:800px"><a class="foto-btn" href="img/fotos/casa-porche-800.jpg" data-visor="casa-porche" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="530" aria-label="Ver más grande: El porche de madera con flores y el banco junto a la puerta"><picture data-foto="casa-porche"><source type="image/webp" srcset="img/fotos/casa-porche-400.webp 400w, img/fotos/casa-porche-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/casa-porche-400.jpg" srcset="img/fotos/casa-porche-400.jpg 400w, img/fotos/casa-porche-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="530" style="--max:800px" alt="El porche de madera con flores y el banco junto a la puerta" loading="lazy" decoding="async"></picture></a></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/ii-entrada-530.jpg" data-visor="ii-entrada" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: La puerta de Freixe II en el muro de piedra"><picture data-foto="ii-entrada"><source type="image/webp" srcset="img/fotos/ii-entrada-400.webp 400w, img/fotos/ii-entrada-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/ii-entrada-400.jpg" srcset="img/fotos/ii-entrada-400.jpg 400w, img/fotos/ii-entrada-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="La puerta de Freixe II en el muro de piedra" loading="lazy" decoding="async"></picture></a><figcaption class="foto__ap">Freixe II</figcaption></figure>
+              <figure class="foto" style="--r:0.662;--max:530px"><a class="foto-btn" href="img/fotos/casa-camino-530.jpg" data-visor="casa-camino" data-grupo="galeria" data-anchos="400,530" data-ancho="530" data-alto="800" aria-label="Ver más grande: El camino de la aldea llega a la casa entre el monte"><picture data-foto="casa-camino"><source type="image/webp" srcset="img/fotos/casa-camino-400.webp 400w, img/fotos/casa-camino-530.webp 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/casa-camino-400.jpg" srcset="img/fotos/casa-camino-400.jpg 400w, img/fotos/casa-camino-530.jpg 530w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="530" height="800" style="--max:530px" alt="El camino de la aldea llega a la casa entre el monte" loading="lazy" decoding="async"></picture></a></figure>
+              <figure class="foto" style="--r:2.105;--max:800px"><a class="foto-btn" href="img/fotos/aldea-entre-hojas-800.jpg" data-visor="aldea-entre-hojas" data-grupo="galeria" data-anchos="400,800" data-ancho="800" data-alto="380" aria-label="Ver más grande: Casas de la aldea vistas entre las hojas de los árboles"><picture data-foto="aldea-entre-hojas"><source type="image/webp" srcset="img/fotos/aldea-entre-hojas-400.webp 400w, img/fotos/aldea-entre-hojas-800.webp 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw"><img src="img/fotos/aldea-entre-hojas-400.jpg" srcset="img/fotos/aldea-entre-hojas-400.jpg 400w, img/fotos/aldea-entre-hojas-800.jpg 800w" sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 30vw" width="800" height="380" style="--max:800px" alt="Casas de la aldea vistas entre las hojas de los árboles" loading="lazy" decoding="async"></picture></a></figure>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       5. LA BIENVENIDA: lo que cuentan los huéspedes, con citas literales cortas y fechadas de EscapadaRural. «Suele
+       haber», sin prometer: qué incluye hoy está por confirmar.
+       ================================================================================================== -->
+  <section class="bienvenida" id="bienvenida" aria-labelledby="t-bienvenida">
+    <div class="env">
+      <div class="bienv__cab">
+        <h2 class="sec-tit" id="t-bienvenida">La bienvenida de Rocío y Mari Carmen</h2>
+        <p class="sec-intro">Lo cuentan quienes han estado: al llegar suele haber algo de la casa. Depende de la época y de lo que dé el huerto; qué hay ahora, por confirmar con ellas.</p>
+      </div>
+      <ul class="bienv__lista">
+        <li class="bienv__item">
+          <span class="bienv__ico"><svg class="ico" width="44" height="44" aria-hidden="true"><use href="#i-huevos" width="24" height="24"/></svg></span>
+          <h3 class="bienv__que">Huevos de sus gallinas</h3>
+          <blockquote class="bienv__cita"><p>«nos regaló una cesta de huevos frescos de sus gallinas»</p></blockquote>
+          <p class="bienv__de">Cristina, en EscapadaRural, febrero de 2018</p>
+        </li>
+        <li class="bienv__item">
+          <span class="bienv__ico"><svg class="ico" width="44" height="44" aria-hidden="true"><use href="#i-miel" width="24" height="24"/></svg></span>
+          <h3 class="bienv__que">Miel</h3>
+          <blockquote class="bienv__cita"><p>«nos regalo huevos frescos de sus gallinas y una miel deliciosa»</p></blockquote>
+          <p class="bienv__de">Ana, en EscapadaRural, enero de 2017</p>
+        </li>
+        <li class="bienv__item">
+          <span class="bienv__ico"><svg class="ico" width="44" height="44" aria-hidden="true"><use href="#i-huerto" width="24" height="24"/></svg></span>
+          <h3 class="bienv__que">Rosquillas y verdura del huerto</h3>
+          <blockquote class="bienv__cita"><p>«nos diron rosquillas, verduras del huerto y mucha hospitabilidad»</p></blockquote>
+          <p class="bienv__de">Vera, en EscapadaRural, mayo de 2019</p>
+        </li>
+        <li class="bienv__item">
+          <span class="bienv__ico"><svg class="ico" width="44" height="44" aria-hidden="true"><use href="#i-lena" width="24" height="24"/></svg></span>
+          <h3 class="bienv__que">Leña para la chimenea y la barbacoa</h3>
+          <blockquote class="bienv__cita"><p>«también leña para la chimenea y la barbacoa»</p></blockquote>
+          <p class="bienv__de">Cristina, en EscapadaRural, febrero de 2018</p>
+        </li>
+      </ul>
+      <p class="bienv__fino">Citas literales de sus opiniones en EscapadaRural, tal cual las escribieron.</p>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       6. DESDE LA PUERTA (#lugar): módulo del agente Lugar (js/lugar.js, css/lugar.css). Sección OSCURA: base.css
+       redefine dentro sus variables de texto. Ningún antepasado de [data-modulo="lugar"] lleva overflow, transform ni
+       filter. Respaldo de la Web (sin JS, sin WebGL): una foto del entorno y el texto.
+       ================================================================================================== -->
+  <section class="lugar" id="lugar" aria-labelledby="t-lugar">
+    <div class="env lugar__cab">
+      <h2 class="sec-tit" id="t-lugar">Desde la puerta</h2>
+      <p>De la casa al río Barcia y, valle arriba, a Santa Eulalia y las aldeas: el relieve y la ortofoto del IGN, las rutas que salen de aquí y el sol y la luna de ahora.</p>
+    </div>
+    <div data-modulo="lugar">
+      <div class="lugar__respaldo env">
+        <figure class="lugar__foto"><picture data-foto="valle-otono"><source type="image/webp" srcset="img/fotos/valle-otono-400.webp 400w, img/fotos/valle-otono-640.webp 640w" sizes="(max-width: 699px) 92vw, 640px"><img src="img/fotos/valle-otono-400.jpg" srcset="img/fotos/valle-otono-400.jpg 400w, img/fotos/valle-otono-640.jpg 640w" sizes="(max-width: 699px) 92vw, 640px" width="640" height="473" style="--max:640px" alt="Ladera de robles y castaños en otoño sobre unas casas de piedra y un prado, en Los Oscos" loading="lazy" decoding="async"></picture><figcaption>Los Oscos en otoño. Foto de su web.</figcaption></figure>
+        <div class="lugar__respaldo-txt">
+          <p>Barcia está en el valle del río Barcia, en el concejo de Santa Eulalia de Oscos. Desde la puerta sale la ruta de Os Cortíos, y valle arriba quedan Santa Eulalia y las aldeas de alrededor.</p>
+          <p class="lugar__fino">Aquí se carga el valle en 3D, con el relieve y la ortofoto del Instituto Geográfico Nacional. En el móvil, con un botón.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       7. ALREDEDOR (#alrededor): módulo del agente Lugar. construir.mjs mete aquí partes/alrededor.html (lista con las
+       cifras de OSRM = respaldo sin JS + hueco del mapa); mientras no exista, una lista provisional sin cifras.
+       ================================================================================================== -->
+  <section class="alrededor" id="alrededor" aria-labelledby="t-alrededor">
+    <div class="env">
+      <h2 class="sec-tit" id="t-alrededor">Alrededor</h2>
+      <p class="sec-intro">Elige un sitio de la lista: el mapa va hasta él y dibuja el camino desde la casa, con los kilómetros y los minutos.</p>
+      <div data-modulo="alrededor"><div class="alr" data-alrededor-version="2026-11-26">
+  <div class="alr__lista">
+    <section class="alr__grupo alr__grupo--concejo" aria-labelledby="alr-g-concejo">
+      <h3 class="alr__grupo-tit" id="alr-g-concejo">En el concejo</h3>
+      <ul class="alr__items">
+        <li class="alr__item" data-id="santalla">
+          <button type="button" class="alr__boton" data-id="santalla" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Santa Eulalia de Oscos</span>
+            <span class="alr__cifra"><b>4,3 km</b> <span>5 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">Santalla, la capital del concejo · por AS-27 · a pie, 4,1 km y 55 min</p>
+        </li>
+        <li class="alr__item" data-id="sargadelos">
+          <button type="button" class="alr__boton" data-id="sargadelos" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Casa natal del Marqués de Sargadelos</span>
+            <span class="alr__cifra"><b>5,9 km</b> <span>7 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">museo en Ferreirela de Baxo · por AS-27 · a pie, 5,8 km y 1 h 17 min</p>
+        </li>
+        <li class="alr__item" data-id="mazonovo">
+          <button type="button" class="alr__boton" data-id="mazonovo" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Conjunto etnográfico de Mazonovo</span>
+            <span class="alr__cifra"><b>7,2 km</b> <span>8 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">mazo y ferrería · por AS-27 · a pie, 7,2 km y 1 h 36 min</p>
+        </li>
+        <li class="alr__item" data-id="ferreira">
+          <button type="button" class="alr__boton" data-id="ferreira" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Ferreira</span>
+            <span class="alr__cifra"><b>8,7 km</b> <span>13 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">área recreativa junto al Agüeira · por AS-27</p>
+        </li>
+      </ul>
+    </section>
+    <section class="alr__grupo alr__grupo--rutas" aria-labelledby="alr-g-rutas">
+      <h3 class="alr__grupo-tit" id="alr-g-rutas">Rutas a pie</h3>
+      <ul class="alr__items">
+        <li class="alr__item" data-id="seimeira">
+          <button type="button" class="alr__boton" data-id="seimeira" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Ruta de la Seimeira</span>
+            <span class="alr__cifra"><b>4,9 km</b> <span>6 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">sendero de 3,3 km con trazado en OpenStreetMap, de 493 a 609 m · por AS-27, SE-2 · a pie, 4,5 km y 1 h · la salida, en el área recreativa de Pumares</p>
+        </li>
+        <li class="alr__item" data-id="talladas">
+          <button type="button" class="alr__boton" data-id="talladas" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Ruta de la Mina de As Talladas</span>
+            <span class="alr__cifra"><b>4,3 km</b> <span>5 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">sendero de 12,7 km con trazado en OpenStreetMap, de 394 a 672 m · por AS-27 · a pie, 4,1 km y 55 min · la salida, en Santa Eulalia</p>
+        </li>
+      </ul>
+      <p class="alr__nota">Os Cortíos (sale de la puerta), el Forcón de los Ríos, las Carballeiras y A Coba no tienen trazado en OpenStreetMap: aquí no se dibujan. En la casa saben por dónde van.</p>
+    </section>
+    <section class="alr__grupo alr__grupo--comarca" aria-labelledby="alr-g-comarca">
+      <h3 class="alr__grupo-tit" id="alr-g-comarca">Los Oscos y alrededor</h3>
+      <ul class="alr__items">
+        <li class="alr__item" data-id="villanueva">
+          <button type="button" class="alr__boton" data-id="villanueva" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Villanueva de Oscos</span>
+            <span class="alr__cifra"><b>10,6 km</b> <span>14 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">iglesia del monasterio de Santa María · por AS-27, AS-33</p>
+        </li>
+        <li class="alr__item" data-id="sanmartin">
+          <button type="button" class="alr__boton" data-id="sanmartin" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">San Martín de Oscos</span>
+            <span class="alr__cifra"><b>14,2 km</b> <span>20 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">Samartín · por AS-27, AS-33, AS-362</p>
+        </li>
+        <li class="alr__item" data-id="taramundi">
+          <button type="button" class="alr__boton" data-id="taramundi" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Taramundi</span>
+            <span class="alr__cifra"><b>23,1 km</b> <span>24 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">por AS-27, AS-11, AS-26, AS-21</p>
+        </li>
+        <li class="alr__item" data-id="fonsagrada">
+          <button type="button" class="alr__boton" data-id="fonsagrada" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">A Fonsagrada</span>
+            <span class="alr__cifra"><b>24,7 km</b> <span>30 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">por AS-27, LU-703, LU-701</p>
+        </li>
+      </ul>
+    </section>
+    <section class="alr__grupo alr__grupo--costa" aria-labelledby="alr-g-costa">
+      <h3 class="alr__grupo-tit" id="alr-g-costa">La costa</h3>
+      <ul class="alr__items">
+        <li class="alr__item" data-id="vegadeo">
+          <button type="button" class="alr__boton" data-id="vegadeo" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Vegadeo</span>
+            <span class="alr__cifra"><b>27 km</b> <span>26 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">A Veiga · por AS-27, AS-11</p>
+        </li>
+        <li class="alr__item" data-id="ribadeo">
+          <button type="button" class="alr__boton" data-id="ribadeo" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Ribadeo</span>
+            <span class="alr__cifra"><b>37,9 km</b> <span>41 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">por AS-27, AS-11, N-640, N-642, LU-140</p>
+        </li>
+        <li class="alr__item" data-id="catedrales">
+          <button type="button" class="alr__boton" data-id="catedrales" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Playa de las Catedrales</span>
+            <span class="alr__cifra"><b>46,7 km</b> <span>49 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">Praia das Catedrais, el acceso · por AS-27, AS-11, N-640, N-642, N-634, LU-P-0610</p>
+        </li>
+      </ul>
+    </section>
+    <section class="alr__grupo alr__grupo--viaje" aria-labelledby="alr-g-viaje">
+      <h3 class="alr__grupo-tit" id="alr-g-viaje">Para llegar</h3>
+      <ul class="alr__items">
+        <li class="alr__item" data-id="aeropuerto">
+          <button type="button" class="alr__boton" data-id="aeropuerto" aria-pressed="false" aria-controls="alr-ficha" disabled>
+            <span class="alr__nombre">Aeropuerto de Asturias</span>
+            <span class="alr__cifra"><b>125,8 km</b> <span>1 h 36 min en coche</span></span>
+          </button>
+          <p class="alr__detalle">la terminal · por AS-27, AS-11, N-640, A-8, AI-82</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <div class="alr__vista" hidden>
+    <div class="alr__mapa" id="alr-mapa" aria-hidden="true"></div>
+    <div class="alr__ficha" id="alr-ficha" aria-live="polite"></div>
+  </div>
+  <p class="alr__fuente">Distancias y tiempos desde la puerta de Casa Freixe con OSRM (coche) y routing.openstreetmap.de (a pie), con datos de © colaboradores de OpenStreetMap (ODbL), calculados el 26/11/2026. Son tiempos teóricos, sin tráfico ni paradas. Relieve y desnivel: MDT05 y MDT25 © IGN (CC BY 4.0).</p>
+</div></div>
+    </div>
+  </section>
+
+  <!-- 8. OPINIONES: la nota y el enlace, sin recuento destacado (regla de pocas reseñas); tres citas cortas y fechadas. -->
+  <section class="opiniones" id="opiniones" aria-labelledby="t-opiniones">
+    <div class="env opiniones__in">
+      <p class="opiniones__nota" aria-hidden="true"><span class="cifra">5</span><span class="opiniones__de">/5</span></p>
+      <div class="opiniones__txt">
+        <h2 class="sec-tit" id="t-opiniones">Cinco sobre cinco en EscapadaRural</h2>
+        <p>Es la nota que le dan quienes han opinado en EscapadaRural.</p>
+        <p><a class="btn btn--linea" href="https://www.escapadarural.com/casa-rural/asturias/casa-freixe/opiniones" target="_blank" rel="noopener">Leer las opiniones en EscapadaRural<span class="vh"> (se abre en otra pestaña)</span></a></p>
+      </div>
+      <ul class="opiniones__citas">
+        <li><blockquote><p>«El lugar es una aldea de cuento, con cuatro vecinos entrañables.»</p></blockquote><p class="opiniones__quien">Macarena, en familia, septiembre de 2018</p></li>
+        <li><blockquote><p>«La casa es muy cómoda, bonita y bien equipada, construida en piedra y pizarra, materiales característicos de la zona.»</p></blockquote><p class="opiniones__quien">Cristina, en pareja, febrero de 2018</p></li>
+        <li><blockquote><p>«El entorno es precioso, ideal para disfrutar de la naturaleza y del silencio.»</p></blockquote><p class="opiniones__quien">Samuel, en pareja, agosto de 2021</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================================================================================================
+       9. RESERVAR (js/reserva.js): simulador MARCADO. Precio de su web de 2014 (70/65 € + IVA) marcado como supuesto;
+       los días ocupados son de ejemplo. No envía ni guarda nada: prepara un correo o la llamada.
+       ================================================================================================== -->
+  <section class="reservar" id="reservar" aria-labelledby="t-reservar">
+    <div class="env">
+      <h2 class="sec-tit" id="t-reservar">Elige fechas</h2>
+      <p class="sec-intro">Prueba fechas y mira el precio de cada noche. Cuando lo tengas, se prepara la solicitud para la casa: ellos te confirman.</p>
+      <div class="sim" data-modulo="reserva">
+        <div class="sim__respaldo">
+          <p>Para reservar, llama al <a class="cifra" href="tel:+34985621215">985 621 215</a> o al móvil <a class="cifra" href="tel:+34669924374">669 924 374</a>, o escribe a <a href="mailto:info@casafreixe.com">info@casafreixe.com</a>.</p>
+          <p>Temporada alta: julio, agosto, semana santa y puentes. Baja: el resto del año.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CONTACTO + MAPA (Google, solo al pulsar) -->
+  <section class="contacto" id="contacto" aria-labelledby="t-contacto">
+    <div class="env contacto__in">
+      <div class="contacto__txt">
+        <h2 class="sec-tit" id="t-contacto">Contacto y cómo llegar</h2>
+        <p class="contacto__dir">Casa Freixe<br>Barcia, 33776 Santa Eulalia de Oscos<br>Asturias</p>
+        <ul class="contacto__medios">
+          <li><svg class="ico" width="22" height="22" aria-hidden="true"><use href="#i-tel" width="24" height="24"/></svg><a class="cifra" href="tel:+34985621215">985 621 215</a><small>Fijo</small></li>
+          <li><svg class="ico" width="22" height="22" aria-hidden="true"><use href="#i-tel" width="24" height="24"/></svg><a class="cifra" href="tel:+34669924374">669 924 374</a><small>Móvil</small></li>
+          <li><svg class="ico" width="22" height="22" aria-hidden="true"><use href="#i-correo" width="24" height="24"/></svg><a href="mailto:info@casafreixe.com">info@casafreixe.com</a></li>
+        </ul>
+        <p class="contacto__fino">Las distancias en coche y a pie, desde la puerta, están en <a href="#alrededor">Alrededor</a>.</p>
+      </div>
+      <div class="mapa" id="mapa" data-q="43.286736,-7.030365">
+        <button class="mapa__btn" type="button" id="mapa-btn"><svg class="ico" width="32" height="32" aria-hidden="true"><use href="#i-mapa" width="24" height="24"/></svg><b>Ver el mapa</b><small>Se carga Google Maps, que puede poner sus cookies.</small></button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ pie: el rótulo se completa. La portada abrió el árbol (la línea de monte se traza, la i crece y el fresno
+     brota); el pie lo cierra con el mismo rótulo, el árbol entero de hoy y, al pie del tronco, las hojas que cayeron
+     mientras bajabas (js/portada.js, Freixe.pie). Con movimiento reducido, ya está completo. ============ -->
+<footer class="pie" id="pie">
+  <div class="env">
+    <figure class="pie__arbol" data-modulo="pie">
+      <svg class="rotulo rotulo--pie" viewBox="-12 -200 736.5 296" aria-hidden="true" focusable="false">
+          <path class="r-monte" pathLength="1" d="M98 -101C106.67 -104.67 132.17 -116.5 150 -123C167.83 -129.5 187.5 -139 205 -140C222.5 -141 239.17 -133.67 255 -129C270.83 -124.33 282.5 -112.17 300 -112C317.5 -111.83 340 -122 360 -128C380 -134 403 -145.5 420 -148C437 -150.5 450.04 -146.5 462 -143C473.96 -139.5 486.79 -129.67 491.75 -127"/>
+          <path class="r-letras" d="M86.2 -80.37A47.25 47.25 0 1 0 86.2 -19.63M104.75 -35A32.25 32.25 0 1 0 169.25 -35A32.25 32.25 0 1 0 104.75 -35ZM169.25 -70V0M225.5 -58C222 -64.5 215.5 -67.25 207.5 -67.25C197 -67.25 190 -61.5 190 -53C190 -43.5 198 -40 207 -37.5C217 -34.8 225.5 -31 225.5 -19.5C225.5 -9 217 -2.75 206.5 -2.75C197.5 -2.75 190.5 -7 187.5 -14M243.75 -35A32.25 32.25 0 1 0 308.25 -35A32.25 32.25 0 1 0 243.75 -35ZM308.25 -70V0M361.75 0V-100M359 -97.25H411M361.75 -52H403M426.75 0V-70M426.75 -38C426.75 -57 437 -67.25 455 -67.25M469.75 -35H534.25A32.25 32.25 0 1 0 525.97 -13.42M572.5 -70L630.5 0M630.5 -70L572.5 0M644.25 -35H708.75A32.25 32.25 0 1 0 700.47 -13.42"/>
+          <path class="r-i" pathLength="1" d="M554.75 0V-88"/>
+          <path class="r-copa" d="M626.4 -120C626.96 -117.01 626.44 -113.64 625.15 -110.8C623.86 -107.95 620.64 -105.46 618.69 -102.93C616.74 -100.41 614.71 -98.27 613.44 -95.63C612.17 -92.99 612.24 -89.14 611.08 -87.09C609.93 -85.03 608.76 -84.56 606.53 -83.29C604.3 -82.02 600.75 -80.42 597.69 -79.45C594.63 -78.48 591.09 -78.27 588.16 -77.47C585.22 -76.67 582.73 -75.66 580.07 -74.63C577.42 -73.61 574.92 -72.4 572.22 -71.32C569.52 -70.24 566.78 -69.36 563.87 -68.13C560.95 -66.89 558.01 -65.18 554.75 -63.9C551.49 -62.63 547.72 -60.69 544.29 -60.47C540.85 -60.25 537.05 -60.99 534.14 -62.58C531.24 -64.18 529.06 -67.65 526.87 -70.06C524.68 -72.46 523.24 -75.21 521 -77.03C518.76 -78.86 516.01 -79.65 513.44 -81C510.87 -82.35 507.75 -83.93 505.58 -85.14C503.4 -86.34 501.84 -86.44 500.38 -88.24C498.92 -90.04 498.02 -93.39 496.81 -95.95C495.61 -98.5 494.15 -100.94 493.16 -103.56C492.17 -106.18 491.44 -108.91 490.9 -111.65C490.36 -114.39 490.53 -117.14 489.93 -120C489.32 -122.86 488.17 -125.7 487.27 -128.82C486.38 -131.94 484.42 -135.6 484.55 -138.74C484.68 -141.88 485.76 -145.32 488.06 -147.69C490.36 -150.05 494.92 -151.51 498.35 -152.95C501.77 -154.39 505.8 -154.92 508.62 -156.34C511.44 -157.75 513.19 -159.54 515.26 -161.43C517.33 -163.32 518.89 -165.77 521.05 -167.68C523.2 -169.58 525.67 -171.24 528.19 -172.87C530.71 -174.51 533.37 -176.07 536.18 -177.48C538.99 -178.9 541.95 -180.64 545.05 -181.35C548.14 -182.05 551.57 -182.09 554.75 -181.73C557.93 -181.38 560.98 -179.79 564.11 -179.2C567.24 -178.6 570.2 -178.27 573.53 -178.15C576.87 -178.03 580.81 -179.05 584.13 -178.49C587.45 -177.92 591.09 -176.88 593.45 -174.75C595.81 -172.61 597.07 -168.76 598.28 -165.67C599.49 -162.58 599.61 -158.93 600.7 -156.2C601.79 -153.46 603.19 -151.43 604.81 -149.25C606.43 -147.07 608.57 -145.27 610.42 -143.11C612.27 -140.96 614 -138.71 615.89 -136.32C617.78 -133.93 620.03 -131.48 621.78 -128.76C623.53 -126.04 625.84 -122.99 626.4 -120Z"/>
+          <path class="r-rubrica" pathLength="1" d="M150 50C190 30 236 32 238 46C240 60 206 62 204 50C202 36 250 34 300 44C350 54 400 58 448 54"/>
+          <text class="r-cursiva" x="707.5" y="72" text-anchor="end">Turismo Rural</text>
+        </svg>
+      <figcaption class="pie__arbol-txt" id="pie-txt">Freixe es fresno. El árbol del rótulo, como está hoy en Barcia.</figcaption>
+    </figure>
+    <div class="pie__cols">
+      <div>
+        <h2 class="pie__h">Dónde</h2>
+        <p>Barcia<br>33776 Santa Eulalia de Oscos<br>Asturias</p>
+        <p><a href="#contacto">Cómo llegar</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">Reservas</h2>
+        <p><a class="cifra" href="tel:+34985621215">985 621 215</a><br><a class="cifra" href="tel:+34669924374">669 924 374</a><br><a href="mailto:info@casafreixe.com">info@casafreixe.com</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">La casa</h2>
+        <p><a href="#apartamentos">Los dos apartamentos</a><br><a href="#dentro">Por dentro</a><br><a href="#opiniones">Opiniones</a><br><a href="#reservar">Ver fechas</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">El sitio</h2>
+        <p>Reserva de la Biosfera Río Eo, Oscos y Terras de Burón</p>
+        <p><a href="https://www.facebook.com/casafreixe" rel="noopener">Facebook<span class="vh"> de Casa Freixe</span></a></p>
+      </div>
+    </div>
+    <div class="pie__creditos">
+      <p>Fotos: de su web (casafreixe.com, 2014) y de su ficha de Turismo Asturias, a su tamaño y con una corrección de color suave. El rótulo está redibujado a partir de su logo. Citas y nota: sus opiniones en <a href="https://www.escapadarural.com/casa-rural/asturias/casa-freixe/opiniones">EscapadaRural</a>. Fuentes del valle en 3D y de Alrededor: en sus secciones.</p>
+    </div>
+    <div class="pie__legal">
+      <nav aria-label="Legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="accesibilidad.html">Accesibilidad</a><button type="button" id="abrir-cookies">Preferencias de cookies</button></nav>
+      <p>© <span id="anno">2026</span> Ganadería Freixe S.C. · Registro de Turismo del Principado de Asturias <span class="cifra">AR0311</span></p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Sin cookies de análisis ni de publicidad: solo se guarda que has visto este aviso. Las letras vienen de Google Fonts. El mapa de Google solo se carga si lo pides. <a href="cookies.html">Más información</a></p>
+  <div class="cookies__acc">
+    <button class="btn btn--acento" type="button" id="ck-si">Entendido</button>
+    <button class="btn btn--linea" type="button" id="ck-no">Solo lo necesario</button>
+  </div>
+</div>
+
+<!-- el foco del teclado: contorno redondeado + un folíolo dentado del fresno en la esquina (lo coloca main.js) -->
+<svg class="foco-hoja" id="foco-hoja" aria-hidden="true" focusable="false"><path class="foco-hoja__marco"/><path class="foco-hoja__hoja"/></svg>
+
+<!-- MANDO DE MAQUETA (no viaja al cliente): solo con ?revision -->
+<div class="mando" id="mando" role="group" aria-label="Versiones de la misma web" hidden>
+  <span class="mando__eti">Versión</span>
+  <button type="button" data-densidad="fresno" aria-pressed="true">Fresno</button>
+  <button type="button" data-densidad="sobria" aria-pressed="false">Sobria</button>
+  <span class="mando__eti">Estación</span>
+  <button type="button" data-estacion="hoy" aria-pressed="true">Hoy</button>
+  <button type="button" data-estacion="invierno" aria-pressed="false">Invierno</button>
+  <button type="button" data-estacion="brotacion" aria-pressed="false">Brotación</button>
+  <button type="button" data-estacion="verano" aria-pressed="false">Verano</button>
+  <button type="button" data-estacion="otono" aria-pressed="false">Otoño</button>
+</div>
+<!-- fin del MANDO DE MAQUETA -->
+<!-- el visor de fotos (js/main.js): abre por el NOMBRE del archivo (checklist 11). Las fotos son de 800 px como mucho:
+     nunca se enseñan más grandes que su tamaño real. En el móvil los botones ‹ › van abajo y nada fijo los tapa (el pie
+     y el contador no reciben toques). Se cierra con Esc, con la × o tocando fuera de la foto. -->
+<dialog class="visor" id="visor" aria-label="Fotos de la casa">
+  <figure class="visor__fig">
+    <img id="visor-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="" width="800" height="530" decoding="async">
+    <figcaption class="visor__pie"><span id="visor-pie"></span> <span class="visor__n cifra" id="visor-n"></span></figcaption>
+  </figure>
+  <button class="visor__btn visor__btn--ant" id="visor-ant" type="button" aria-label="Foto anterior"><svg class="ico" width="26" height="26" aria-hidden="true"><use href="#i-ant" width="24" height="24"/></svg></button>
+  <button class="visor__btn visor__btn--sig" id="visor-sig" type="button" aria-label="Foto siguiente"><svg class="ico" width="26" height="26" aria-hidden="true"><use href="#i-sig" width="24" height="24"/></svg></button>
+  <button class="visor__cerrar" id="visor-cerrar" type="button" aria-label="Cerrar"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-cerrar" width="24" height="24"/></svg></button>
+</dialog>
+<script type="application/json" id="datos-freixe">{"nombre":"Casa Freixe","unidades":[{"id":"i","nombre":"Freixe I","romano":"I","personas":[1,2]},{"id":"ii","nombre":"Freixe II","romano":"II","personas":[1,3]}],"precios":{"alta":70,"baja":65,"supuesto":true,"nota":"Precio de su web de 2014, por apartamento y noche, IVA (10 %) aparte. Turismo Asturias da de 42,8 € a 85,6 € como orientativo. Vigentes: por confirmar."},"iva":10,"temporadas":{"alta":"Julio, agosto, Semana Santa y puentes","baja":"El resto del año"},"contacto":{"telefonos":[{"texto":"985 621 215","tel":"+34985621215","tipo":"Fijo"},{"texto":"669 924 374","tel":"+34669924374","tipo":"Móvil"}],"correo":"info@casafreixe.com","facebook":"https://www.facebook.com/casafreixe"}}</script>
+<script src="js/fresno.js?v=b16e3ab5" defer></script>
+<script src="js/portada.js?v=5cc4ea3d" defer></script>
+<script src="js/lugar.js?v=071e25e2" defer></script>
+<script src="js/alrededor.js?v=9a8e074e" defer></script>
+<script src="js/reserva.js?v=41ffaaa7" defer></script>
+<script src="js/main.js?v=658f54ec" defer></script>
+</body>
+</html>

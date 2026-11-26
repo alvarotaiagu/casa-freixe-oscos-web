@@ -1,0 +1,61 @@
+<!-- ============ pie: el rótulo se completa. La portada abrió el árbol (la línea de monte se traza, la i crece y el fresno
+     brota); el pie lo cierra con el mismo rótulo, el árbol entero de hoy y, al pie del tronco, las hojas que cayeron
+     mientras bajabas (js/portada.js, Freixe.pie). Con movimiento reducido, ya está completo. ============ -->
+<footer class="pie" id="pie">
+  <div class="env">
+    <figure class="pie__arbol" data-modulo="pie">
+<!--rotulo-pie-->
+      <figcaption class="pie__arbol-txt" id="pie-txt">Freixe es fresno. El árbol del rótulo, como está hoy en Barcia.</figcaption>
+    </figure>
+    <div class="pie__cols">
+      <div>
+        <h2 class="pie__h">Dónde</h2>
+        <p>Barcia<br>33776 Santa Eulalia de Oscos<br>Asturias</p>
+        <p><a href="#contacto">Cómo llegar</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">Reservas</h2>
+        <p><a class="cifra" href="tel:+34985621215">985 621 215</a><br><a class="cifra" href="tel:+34669924374">669 924 374</a><br><a href="mailto:info@casafreixe.com">info@casafreixe.com</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">La casa</h2>
+        <p><a href="#apartamentos">Los dos apartamentos</a><br><a href="#dentro">Por dentro</a><br><a href="#opiniones">Opiniones</a><br><a href="#reservar">Ver fechas</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">El sitio</h2>
+        <p>Reserva de la Biosfera Río Eo, Oscos y Terras de Burón</p>
+        <p><a href="https://www.facebook.com/casafreixe" rel="noopener">Facebook<span class="vh"> de Casa Freixe</span></a></p>
+      </div>
+    </div>
+<!--creditos-->
+    <div class="pie__legal">
+      <nav aria-label="Legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="accesibilidad.html">Accesibilidad</a><button type="button" id="abrir-cookies">Preferencias de cookies</button></nav>
+      <p>© <span id="anno">2026</span> Ganadería Freixe S.C. · Registro de Turismo del Principado de Asturias <span class="cifra">AR0311</span></p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Sin cookies de análisis ni de publicidad: solo se guarda que has visto este aviso. Las letras vienen de Google Fonts. El mapa de Google solo se carga si lo pides. <a href="cookies.html">Más información</a></p>
+  <div class="cookies__acc">
+    <button class="btn btn--acento" type="button" id="ck-si">Entendido</button>
+    <button class="btn btn--linea" type="button" id="ck-no">Solo lo necesario</button>
+  </div>
+</div>
+
+<!-- el foco del teclado: contorno redondeado + un folíolo dentado del fresno en la esquina (lo coloca main.js) -->
+<svg class="foco-hoja" id="foco-hoja" aria-hidden="true" focusable="false"><path class="foco-hoja__marco"/><path class="foco-hoja__hoja"/></svg>
+
+<!-- MANDO DE MAQUETA (no viaja al cliente): solo con ?revision -->
+<div class="mando" id="mando" role="group" aria-label="Versiones de la misma web" hidden>
+  <span class="mando__eti">Versión</span>
+  <button type="button" data-densidad="fresno" aria-pressed="true">Fresno</button>
+  <button type="button" data-densidad="sobria" aria-pressed="false">Sobria</button>
+  <span class="mando__eti">Estación</span>
+  <button type="button" data-estacion="hoy" aria-pressed="true">Hoy</button>
+  <button type="button" data-estacion="invierno" aria-pressed="false">Invierno</button>
+  <button type="button" data-estacion="brotacion" aria-pressed="false">Brotación</button>
+  <button type="button" data-estacion="verano" aria-pressed="false">Verano</button>
+  <button type="button" data-estacion="otono" aria-pressed="false">Otoño</button>
+</div>
+<!-- fin del MANDO DE MAQUETA -->

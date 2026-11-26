@@ -1,0 +1,37 @@
+{
+ "fuente": "Catastro INSPIRE (BU:BuildingPart) y MDT05 del IGN (CC BY 4.0). Ver LUGAR.md.",
+ "fecha": "2026-11-26",
+ "casa": {
+  "lat": 43.286736,
+  "lon": -7.030365,
+  "cota": 590,
+  "refCatastral": "A00300600PH59D",
+  "edificio": "A00300600PH59D_part1 (2 plantas) + part2 (1 planta, adosada)",
+  "direccionCatastro": "AL BARCIA 6(A), 33776 Santa Eulalia de Oscos",
+  "nota": "Centro del edificio de dos plantas de la parcela. Sus UTM (X 659912 Y 4794777) leídas en ED50 y pasadas a ETRS89 caen a menos de 15 m. Cota = terreno del MDT05 en el centro de la casa (588-591 m en las esquinas). Qué edificio de la parcela es: deducido de las fotos, por confirmar con la casa."
+ },
+ "rio": {
+  "nombre": "Río Barcia",
+  "distancia_m": 91,
+  "cota_m": 583,
+  "nota": "distancia en línea recta del centro de la casa al cauce (tramo alto sacado del MDT05)"
+ },
+ "santalla": {
+  "recta_m": 3213,
+  "cota_m": 543
+ },
+ "rutasEnOSM": [
+  {
+   "nombre": "Ruta de la Mina de As Talladas",
+   "ref": "PR-AS 203",
+   "osm": "relation/7728731",
+   "largo_km": 12.9
+  },
+  {
+   "nombre": "Ruta da Seimeira",
+   "ref": "PR-AS 116",
+   "osm": "relation/6485046",
+   "largo_km": 3.3
+  }
+ ]
+}

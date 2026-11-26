@@ -1,0 +1,192 @@
+/* ------------------------------------------------------------------
+   Casa Freixe · base: variables comunes (contrato con Lugar: las define la Web, Lugar solo las LEE), letras, botones,
+   cabecera, menú, cookies, foco, visor, mando de maqueta.
+   Paleta: una base FIJA de piedra y pizarra (gris de piedra claro, tinta de pizarra) + el verde de la copa de su logo
+   (#43740D, medido con PIL en ref/logo-recorte-0.png) + UN acento que cambia con la estación del fresno:
+     invierno  #3E5A73  pizarra fría (el cielo de las yemas negras)
+     brotación #6E3A5E  pardo violáceo (las flores del fresno, antes que la hoja)
+     verano    #43740D  el verde de la copa del logo
+     otoño     #E2C35A  amarillo pálido (la hoja del fresno antes de caer); como texto, ocre #765A00
+   Formas: botones y mandos en píldora; paneles a 6 px; fotos sin marco ni radio.
+   ------------------------------------------------------------------ */
+:root {
+  --fondo: #EDEEEB;
+  --superficie: #F7F7F5;
+  --texto: #1A1E21;
+  --texto-suave: #4A5156;
+  --piedra: #8E877B;
+  --piedra-clara: #D9D6CF;
+  --pizarra: #22282C;
+  --linea: #C9CAC5;
+  --marca: #43740D;
+  --marca-texto: #3A650B;
+  /* el acento: verano por defecto (sin JS no hay estación) */
+  --acento: #43740D;
+  --sobre-acento: #F7FBF2;
+  --acento-texto: #3A650B;
+  --acento-suave: #DDE7D2;
+  --acento-claro: #A9CF7A;      /* el mismo acento, como texto sobre la sección oscura */
+  --foco: var(--acento-texto);
+  --letra-titular: 'Didact Gothic', 'Century Gothic', 'Avenir Next', 'Segoe UI', sans-serif;
+  --letra-texto: 'Inclusive Sans', 'Segoe UI', system-ui, sans-serif;
+  --letra-cifras: 'Didact Gothic', 'Century Gothic', 'Segoe UI', sans-serif;
+  --cabecera: 68px;
+  --ancho: 1240px;
+  --gutter: clamp(16px, 4vw, 44px);
+  --radio: 6px;
+  --curva: cubic-bezier(.22, 1, .36, 1);
+}
+html[data-estacion="invierno"] { --acento: #3E5A73; --sobre-acento: #F6F8FA; --acento-texto: #3E5A73; --acento-suave: #DDE3E8; --acento-claro: #A8C2D8; }
+html[data-estacion="brotacion"] { --acento: #6E3A5E; --sobre-acento: #FBF5F9; --acento-texto: #6E3A5E; --acento-suave: #E8DDE4; --acento-claro: #DDB3D0; }
+html[data-estacion="verano"] { --acento: #43740D; --sobre-acento: #F7FBF2; --acento-texto: #3A650B; --acento-suave: #DDE7D2; --acento-claro: #A9CF7A; }
+html[data-estacion="otono"] { --acento: #E2C35A; --sobre-acento: #1A1E21; --acento-texto: #765A00; --acento-suave: #EFE6C2; --acento-claro: #E8CC6A; }
+
+/* #lugar es la sección OSCURA (pizarra): aquí se redefinen las variables de texto para fondo oscuro; Lugar lee estas */
+#lugar {
+  --fondo: #1D2326;
+  --superficie: #283034;
+  --texto: #EEF0EE;
+  --texto-suave: #B7BEC1;
+  --linea: #3D474C;
+  --marca-texto: #A9CF7A;
+  --acento-texto: var(--acento-claro);
+  --foco: var(--acento-claro);
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { overflow-x: clip; -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--cabecera) + 8px); }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 400 1.0625rem/1.62 var(--letra-texto);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg, canvas, picture { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: var(--acento-texto); text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+h1, h2, h3, h4 { font-family: var(--letra-titular); font-weight: 400; line-height: 1.1; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+button { font: inherit; color: inherit; }
+dialog { color: inherit; }
+.vh { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.env { width: 100%; max-width: calc(var(--ancho) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.cifra { font-family: var(--letra-cifras); font-variant-numeric: tabular-nums lining-nums; letter-spacing: 0; }
+.es-pendiente { color: var(--texto-suave); font-style: italic; }
+.ico { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+/* el rótulo (construir.mjs): reglas por clase sola, para que valgan también dentro de <use href="#rotulo"> (cabecera,
+   legales, 404); el grosor y la copa se ajustan con variables, que sí heredan dentro de <use> */
+.r-letras, .r-i { fill: none; stroke: currentColor; stroke-width: var(--rotulo-trazo, 5.5); }
+.r-monte { fill: none; stroke: currentColor; stroke-width: var(--rotulo-monte, 2.2); stroke-linecap: round; }
+.r-rubrica { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+.r-copa { fill: var(--marca); visibility: var(--copa-vis, visible); }
+.r-cursiva { font-family: 'Sacramento', 'Segoe Script', cursive; font-size: 50px; fill: currentColor; }
+.saltar { position: absolute; left: 12px; top: -60px; z-index: 60; background: var(--texto); color: var(--fondo); padding: .6em 1em; border-radius: 999px; }
+.saltar:focus { top: 12px; }
+
+.sec-tit { font-size: clamp(2rem, 1.2rem + 3vw, 3.4rem); max-width: 22ch; }
+.sec-intro { color: var(--texto-suave); max-width: 60ch; font-size: 1.125rem; margin-top: 1rem; }
+
+/* ---------- botones (píldora) ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55em;
+  min-height: 48px; padding: .7em 1.45em; border-radius: 999px;
+  font: 500 1rem/1.1 var(--letra-texto); text-decoration: none; white-space: nowrap;
+  border: 1.5px solid transparent; cursor: pointer;
+  transition: transform .2s var(--curva), background-color .2s, color .2s, border-color .2s;
+}
+.btn:active { transform: translateY(1px) scale(.985); }
+.btn--acento { background: var(--acento); color: var(--sobre-acento); }
+.btn--acento:hover { background: color-mix(in oklab, var(--acento) 86%, var(--texto)); }
+.btn--linea { border-color: currentColor; color: var(--texto); background: transparent; }
+.btn--linea:hover { background: color-mix(in oklab, var(--texto) 7%, transparent); }
+
+/* ---------- el foco: contorno + folíolo dentado en la esquina (main.js lo coloca); sin JS, el anillo redondeado ---------- */
+:focus-visible { outline: 2px solid var(--foco); outline-offset: 3px; border-radius: 4px; }
+html.foco-propio :focus-visible { outline-color: transparent; }
+html.foco-propio dialog :focus-visible { outline-color: var(--foco); }
+.foco-hoja { position: absolute; left: 0; top: 0; z-index: 70; pointer-events: none; overflow: visible; opacity: 0; color: var(--foco); }
+.foco-hoja.es-fijo { position: fixed; }
+.foco-hoja.es-visible { opacity: 1; }
+.foco-hoja__marco { fill: none; stroke: currentColor; stroke-width: 2; }
+.foco-hoja__hoja { fill: currentColor; stroke: var(--foco-fondo, var(--fondo)); stroke-width: 1.4; }
+
+/* ---------- cabecera ---------- */
+.cab { position: fixed; inset: 0 0 auto; z-index: 40; height: var(--cabecera); transition: background-color .3s, box-shadow .3s; }
+.cab.sc { background: color-mix(in oklab, var(--fondo) 94%, transparent); box-shadow: 0 1px 0 var(--linea); }
+@supports (backdrop-filter: blur(8px)) { .cab.sc { background: color-mix(in oklab, var(--fondo) 80%, transparent); backdrop-filter: blur(12px) saturate(1.2); } }
+.cab__in { height: 100%; max-width: calc(var(--ancho) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); display: flex; align-items: center; gap: clamp(12px, 2.4vw, 32px); }
+.marca { display: block; color: var(--texto); flex: none; margin-right: auto; padding: 6px 0; }
+.marca__rotulo { width: 132px; height: auto; --rotulo-trazo: 7; --rotulo-monte: 3.4; transition: opacity .3s, transform .4s var(--curva); }
+/* con la portada arriba, el rótulo pequeño no hace falta: es el grande */
+html.portada-arriba .marca__rotulo { opacity: 0; transform: translateY(-6px); }
+.cab__nav { display: flex; gap: clamp(14px, 1.8vw, 28px); }
+.cab__nav a { color: var(--texto); text-decoration: none; font-size: .975rem; padding: .4em 0; border-bottom: 1.5px solid transparent; white-space: nowrap; }
+.cab__nav a:hover, .cab__nav a[aria-current] { border-bottom-color: var(--acento); }
+.cab__reservar { min-height: 42px; padding: .55em 1.2em; }
+.cab__menu { display: none; width: 46px; height: 46px; border: 0; background: transparent; border-radius: 999px; position: relative; cursor: pointer; z-index: 2; }
+.cab__menu i { position: absolute; left: 12px; right: 12px; height: 1.6px; background: currentColor; transition: transform .3s var(--curva); }
+.cab__menu i:first-of-type { top: 18px; }
+.cab__menu i:last-of-type { top: 26px; }
+body.menu .cab__menu i:first-of-type { transform: translateY(4px) rotate(45deg); }
+body.menu .cab__menu i:last-of-type { transform: translateY(-4px) rotate(-45deg); }
+.menu-movil { position: fixed; left: 0; right: 0; top: 0; height: 100dvh; z-index: 1; background: var(--fondo); padding: calc(var(--cabecera) + 12px) var(--gutter) 24px; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .25s, visibility 0s .25s; }
+body.menu .menu-movil { visibility: visible; opacity: 1; transition: opacity .25s; }
+.menu-movil nav { display: grid; }
+.menu-movil nav a { display: grid; color: var(--texto); text-decoration: none; font: 400 1.7rem/1.15 var(--letra-titular); padding: .55rem 0; border-bottom: 1px solid var(--linea); }
+.menu-movil nav small { font: 400 .85rem/1.3 var(--letra-texto); color: var(--texto-suave); order: 2; }
+.menu-movil__tel { display: grid; gap: .3rem; margin-top: 1.4rem; }
+.menu-movil__tel a { color: var(--texto); }
+@media (max-width: 1099px) {
+  .cab__nav { display: none; }
+  .cab__menu { display: block; }
+}
+@media (max-width: 459px) { .cab__reservar { display: none; } }
+body.menu { overflow: hidden; }
+body.menu .cab { background: var(--fondo); }
+body.menu .marca__rotulo { opacity: 1; transform: none; }
+
+/* ---------- aviso de cookies ---------- */
+.cookies { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; max-width: 640px; background: var(--pizarra); color: #EEF0EE; padding: 16px 18px; border-radius: var(--radio); gap: 14px; flex-wrap: wrap; align-items: center; box-shadow: 0 10px 40px rgb(26 30 33 / .25); font-size: .95rem; }
+.cookies:not([hidden]) { display: flex; }
+.cookies p { flex: 1 1 280px; margin: 0; }
+.cookies a { color: #F1E3A6; }
+.cookies__acc { display: flex; gap: 8px; flex-wrap: wrap; }
+.cookies .btn--linea { color: #EEF0EE; }
+.cookies .btn { min-height: 44px; }
+.cookies { --foco: #F1E3A6; --foco-fondo: var(--pizarra); }
+
+/* ---------- visor de fotos ---------- */
+.visor { width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: rgb(18 21 23 / .96); color: #EEF0EE; }
+.visor::backdrop { background: rgb(18 21 23 / .7); }
+.visor[open] { display: grid; place-items: center; }
+.visor__fig { margin: 0; display: grid; gap: 10px; justify-items: center; padding: 56px 16px 96px; max-height: 100dvh; }
+.visor__fig img { width: auto; max-width: min(100%, var(--max, 800px)); max-height: calc(100dvh - 170px); object-fit: contain; }
+.visor__pie { font-size: .95rem; color: #C9D0D2; text-align: center; pointer-events: none; }
+.visor__n { margin-left: .6em; color: #9AA3A6; }
+.visor__btn, .visor__cerrar { position: absolute; width: 52px; height: 52px; border-radius: 999px; border: 1px solid #5A6468; background: rgb(18 21 23 / .6); color: #EEF0EE; display: grid; place-items: center; cursor: pointer; }
+.visor__btn--ant { left: 16px; top: 50%; translate: 0 -50%; }
+.visor__btn--sig { right: 16px; top: 50%; translate: 0 -50%; }
+.visor__cerrar { right: 16px; top: 16px; }
+@media (max-width: 699px) {
+  .visor__btn { top: auto; bottom: 20px; translate: none; }
+  .visor__btn--ant { left: calc(50% - 64px); }
+  .visor__btn--sig { right: calc(50% - 64px); }
+}
+
+/* ---------- MANDO DE MAQUETA (no viaja al cliente): solo con ?revision ---------- */
+.mando { position: fixed; left: 12px; bottom: 12px; z-index: 45; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; max-width: calc(100vw - 24px); padding: 6px; border-radius: 16px; background: var(--pizarra); color: #EEF0EE; font-size: .8rem; box-shadow: 0 8px 30px rgb(26 30 33 / .3); }
+.mando[hidden] { display: none; }
+.mando__eti { padding: 0 6px; color: #AEB6B9; }
+.mando button { border: 0; background: transparent; color: inherit; border-radius: 999px; padding: .45em .8em; cursor: pointer; min-height: 32px; }
+.mando button[aria-pressed="true"] { background: #EEF0EE; color: var(--pizarra); }
+/* fin del MANDO DE MAQUETA */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}

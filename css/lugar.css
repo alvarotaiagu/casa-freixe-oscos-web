@@ -1,0 +1,143 @@
+/* Casa Freixe · lugar.css · «Desde la puerta» (módulo de Lugar)
+   Clase raíz: .lugar-mod (el div [data-modulo="lugar"]). Todo con prefijo lugar__.
+   Lee las variables de Web (css/base.css) y, si #lugar es oscura, las que Web redefine dentro de ella:
+   --fondo, --superficie, --texto, --texto-suave, --linea, --acento, --marca, --letra-titular, --letra-texto,
+   --letra-cifras, --cabecera (alto de la cabecera fija, si la hay). No define colores de página.
+   Sobre el 3D, el texto va en placas oscuras propias (legible sobre cualquier foto aérea). */
+
+.lugar-mod {
+  --lugar-arriba: var(--cabecera, 0px);
+  --lugar-placa: rgb(16 18 16 / .72);
+  --lugar-placa-texto: #f3efe6;
+  --lugar-placa-suave: #cfc8ba;
+  --lugar-rio: #8fc9d8;
+  --lugar-vuelo: var(--lugar-placa-texto);
+  --lugar-ruta-1: var(--acento-claro, #e8cc6a);
+  --lugar-ruta-2: #f4efe3;
+  position: relative;
+  color: var(--texto, #1d1c1a);
+  font-family: var(--letra-texto, system-ui, sans-serif);
+}
+
+/* ---------- el 3D: pista alta con el escenario fijado ---------- */
+.lugar__pista { position: relative; height: 560vh; }
+.lugar__escenario {
+  position: sticky; top: var(--lugar-arriba);
+  height: calc(100vh - var(--lugar-arriba));
+  height: calc(100svh - var(--lugar-arriba));
+  overflow: hidden; background: #1a1f1c; isolation: isolate;
+}
+.lugar__poster, .lugar__lienzo { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lugar__poster { object-fit: cover; filter: saturate(.9) brightness(.8); transition: opacity .8s ease; }
+.lugar__lienzo { opacity: 0; transition: opacity .9s ease; }
+.lugar--listo .lugar__lienzo { opacity: 1; }
+.lugar--listo .lugar__poster { opacity: 0; }
+
+.lugar__rotulos { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.lugar__rotulo {
+  position: absolute; left: 0; top: 0; display: grid; gap: 1px; padding: 5px 9px 6px 12px;
+  margin: -14px 0 0 8px; border-radius: 3px; background: var(--lugar-placa); color: var(--lugar-placa-texto);
+  font-size: .82rem; line-height: 1.2; white-space: nowrap; opacity: 0; transition: opacity .35s ease; will-change: transform;
+}
+.lugar__rotulo::before { content: ''; position: absolute; left: -8px; top: 13px; width: 8px; height: 1px; background: currentColor; opacity: .7; }
+.lugar__rotulo::after { content: ''; position: absolute; left: -11px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.lugar__rotulo.a-la-izq { margin-left: -8px; translate: -100% 0; padding: 5px 12px 6px 9px; }
+.lugar__rotulo.a-la-izq::before { left: auto; right: -8px; }
+.lugar__rotulo.a-la-izq::after { left: auto; right: -11px; }
+.lugar__rotulo b { font-weight: 600; font-family: var(--letra-titular, inherit); letter-spacing: .01em; }
+.lugar__rotulo span { color: var(--lugar-placa-suave); font-size: .74rem; font-family: var(--letra-cifras, inherit); }
+.lugar__rotulo.es-visible { opacity: 1; }
+.lugar__rotulo--casa { background: var(--lugar-placa-texto); color: #1b1a17; }
+.lugar__rotulo--casa span { color: #4a463e; }
+.lugar__rotulo--ruta-seimeira b { color: var(--lugar-ruta-1); }
+
+.lugar__hud { position: absolute; z-index: 3; left: clamp(12px, 3vw, 32px); top: clamp(12px, 3vh, 28px); max-width: min(30rem, calc(100% - 24px)); }
+.lugar__ahora { margin: 0; }
+.lugar__hud .lugar__ahora { padding: 9px 13px; border-radius: 4px; background: var(--lugar-placa); color: var(--lugar-placa-suave); font-size: .82rem; line-height: 1.4; }
+.lugar__hud .lugar__ahora b { display: block; color: var(--lugar-placa-texto); font-family: var(--letra-cifras, inherit); font-weight: 600; font-size: .9rem; }
+
+.lugar__paradas {
+  position: absolute; z-index: 3; left: clamp(12px, 3vw, 32px); bottom: clamp(56px, 9vh, 84px); margin: 0; padding: 0; list-style: none;
+  width: min(25rem, calc(100% - 24px)); counter-reset: parada;
+}
+.lugar__paradas li { display: none; padding: 12px 15px 13px; border-radius: 4px; background: var(--lugar-placa); color: var(--lugar-placa-suave); counter-increment: parada; }
+.lugar__paradas li.es-actual { display: grid; gap: 3px; animation: lugar-entra .45s ease both; }
+.lugar__paradas li b { color: var(--lugar-placa-texto); font-family: var(--letra-titular, inherit); font-size: 1.15rem; font-weight: 600; }
+.lugar__paradas li b::before { content: counter(parada) ' / 5 · '; font-family: var(--letra-cifras, inherit); font-size: .78rem; font-weight: 500; color: var(--lugar-placa-suave); vertical-align: .12em; }
+.lugar__paradas li span { font-size: .9rem; line-height: 1.45; }
+@keyframes lugar-entra { from { opacity: 0; transform: translateY(6px); } }
+
+.lugar__pie3d { position: absolute; z-index: 3; left: clamp(12px, 3vw, 32px); right: clamp(12px, 3vw, 32px); bottom: clamp(12px, 2.4vh, 22px); display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+.lugar__creditos { margin: 0; padding: 4px 8px; border-radius: 3px; background: rgb(16 18 16 / .5); color: var(--lugar-placa-suave); font-size: .7rem; }
+.lugar__aviso { position: absolute; z-index: 4; left: 50%; top: 50%; translate: -50% -50%; margin: 0; padding: 10px 16px; border-radius: 4px; background: var(--lugar-placa); color: var(--lugar-placa-texto); font-size: .9rem; }
+.lugar__fps { position: absolute; z-index: 5; right: 8px; top: 8px; margin: 0; padding: 6px 8px; background: rgb(0 0 0 / .7); color: #b8f3b0; font: 11px/1.35 ui-monospace, monospace; pointer-events: none; }
+
+.lugar__btn {
+  display: inline-flex; align-items: center; gap: .5em; min-height: 44px; padding: 0 1.15em; border: 1px solid currentColor; border-radius: 999px;
+  background: var(--texto, #1d1c1a); color: var(--fondo, #f6f3ec); font: 600 .95rem/1 var(--letra-texto, inherit); cursor: pointer;
+}
+.lugar__btn:hover { background: var(--acento, #2f4a2a); color: var(--fondo, #fff); }
+.lugar__btn--suave { background: var(--lugar-placa); color: var(--lugar-placa-texto); border-color: rgb(243 239 230 / .45); min-height: 40px; }
+.lugar__btn--suave:hover { background: var(--lugar-placa-texto); color: #1b1a17; }
+.lugar__btn:focus-visible { outline: 3px solid var(--foco, #e8cc6a); outline-offset: 3px; }
+
+/* ---------- plan B ---------- */
+.lugar__planob {
+  display: grid; gap: clamp(16px, 2.4vw, 28px); grid-template-columns: minmax(0, 44fr) minmax(0, 56fr); align-items: start;
+  width: min(100% - 2 * var(--gutter, 16px), var(--ancho, 76rem)); margin: 0 auto; padding-block: clamp(8px, 2vw, 24px);
+}
+.lugar__planob figure { margin: 0; }
+.lugar__marco { position: relative; overflow: hidden; border-radius: 4px; background: var(--superficie, #e9e4da); }
+.lugar__marco img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.lugar__marco--vista img { object-fit: fill; }
+.lugar__planob figcaption { margin-top: 8px; color: var(--texto-suave, #5e5a52); font-size: .84rem; line-height: 1.45; }
+.lugar__ley { display: inline-block; width: 18px; height: 0; margin: 0 2px; vertical-align: middle; border-top: 3px solid var(--lugar-rio); }
+.lugar__ley--vuelo { border-top: 2px dashed var(--lugar-placa-texto); background: #222; height: 3px; border-radius: 2px; }
+.lugar__ley--ruta { border-top-color: var(--lugar-ruta-1); }
+.lugar__trazos { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.lugar__trazos polyline { fill: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.lugar__t-rio { stroke: var(--lugar-rio); stroke-width: 3; }
+.lugar__t-vuelo { stroke: #fff; stroke-width: 2; stroke-dasharray: 6 5; filter: drop-shadow(0 0 1.5px rgb(0 0 0 / .8)); }
+.lugar__t-ruta { stroke: var(--lugar-ruta-2); stroke-width: 3; filter: drop-shadow(0 0 1.5px rgb(0 0 0 / .7)); }
+.lugar__t-ruta--seimeira { stroke: var(--lugar-ruta-1); }
+.lugar__marcas { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; pointer-events: none; }
+.lugar__marca { position: absolute; width: 0; height: 0; }
+.lugar__marca::before { content: ''; position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px rgb(0 0 0 / .55); }
+.lugar__marca span { position: absolute; left: 9px; top: -11px; padding: 2px 7px 3px; border-radius: 3px; background: var(--lugar-placa); color: var(--lugar-placa-texto); font-size: .74rem; line-height: 1.25; white-space: nowrap; }
+.lugar__marca span small { display: block; color: var(--lugar-placa-suave); font-size: .68rem; }
+.lugar__marca.a-la-izq span { left: auto; right: 9px; }
+.lugar__marca--casa::before { width: 12px; height: 12px; left: -6px; top: -6px; background: var(--lugar-ruta-1); }
+.lugar__marca--casa span { background: var(--lugar-placa-texto); color: #1b1a17; font-weight: 600; }
+.lugar__marca--casa span small { color: #4a463e; }
+.lugar__marca--ruta::before { background: var(--lugar-ruta-1); }
+.lugar__noche { position: absolute; inset: 0; background: #07101f; opacity: calc(var(--lugar-noche, 0) * .55); pointer-events: none; }
+.lugar__panel { grid-column: 1 / -1; }
+.lugar__panel .lugar__ahora { padding: 12px 16px; border-left: 3px solid var(--acento, #8a6a2a); background: var(--superficie, #efeae0); color: var(--texto, #1d1c1a); font-size: .95rem; line-height: 1.5; }
+.lugar__pasos { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 12px 20px; margin: 0; padding: 0; list-style: none; counter-reset: paso; }
+.lugar__pasos li { display: grid; gap: 4px; padding-top: 10px; border-top: 1px solid var(--linea, rgb(0 0 0 / .15)); counter-increment: paso; color: var(--texto-suave, #5e5a52); font-size: .9rem; line-height: 1.45; }
+.lugar__pasos li b { color: var(--texto, #1d1c1a); font-family: var(--letra-titular, inherit); font-size: 1.02rem; }
+.lugar__pasos li b::before { content: counter(paso) ' · '; font-family: var(--letra-cifras, inherit); color: var(--acento, #8a6a2a); }
+.lugar__acciones { grid-column: 1 / -1; margin: 0; }
+.lugar__fuente { width: min(100% - 2 * var(--gutter, 16px), var(--ancho, 76rem)); margin: 14px auto 0; color: var(--texto-suave, #5e5a52); font-size: .74rem; line-height: 1.5; }
+
+/* ---------- qué se ve en cada modo ---------- */
+.lugar-mod[data-modo="plano"] .lugar__pista { display: none; }
+.lugar-mod[data-modo="3d"] .lugar__planob { display: none; }
+
+@media (max-width: 820px) {
+  .lugar__planob { grid-template-columns: 1fr; }
+  .lugar__pista { height: 480vh; }
+  .lugar__paradas { bottom: 64px; }
+  .lugar__paradas li span { font-size: .85rem; }
+  .lugar__hud .lugar__ahora span { display: none; }
+  .lugar__creditos { display: none; }
+  .lugar__pie3d { justify-content: flex-end; }
+  .lugar__rotulo { font-size: .76rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lugar__paradas li.es-actual { animation: none; }
+  .lugar__rotulo, .lugar__lienzo, .lugar__poster { transition: none; }
+}
+
+/* el atributo hidden manda sobre los display de arriba (botón 3D, aviso) */
+.lugar-mod [hidden] { display: none !important; }

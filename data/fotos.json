@@ -1,0 +1,42 @@
+{
+  "_nota": "La galería por estancias (construir.mjs → index.html). Cada foto lleva el apartamento por la ruta de su web (I = alquiler-…, II = apartamento-rural-…): por confirmar. El visor abre por NOMBRE de archivo.",
+  "aviso": "Fotos de su web (2014), a su tamaño real como mucho y con una corrección de color suave y común. Pendiente: pedir las originales.",
+  "estancias": [
+    { "id": "cocina", "nombre": "Cocina-salón con chimenea", "corto": "Cocina", "texto": "La pieza donde se hace la vida: cocina equipada, mesa y la chimenea de leña.", "fotos": [
+      { "n": "ii-cocina-chimenea", "ap": "II", "alt": "Cocina-salón de Freixe II: muebles de madera, campana roja y la chimenea encendida" },
+      { "n": "i-cocina-chimenea", "ap": "I", "alt": "Cocina-salón de Freixe I con la chimenea encendida y la mesa redonda" },
+      { "n": "ii-salon", "ap": "II", "alt": "Salón de Freixe II: chimenea, mesa de comedor y sofá" },
+      { "n": "ii-cocina-sofa", "ap": "II", "alt": "Freixe II: la cocina, la mesa y el sofá bajo las vigas" },
+      { "n": "ii-chimenea-fuego", "ap": "II", "alt": "La chimenea de Freixe II encendida, con la leña al lado" },
+      { "n": "ii-cocina-mesa", "ap": "II", "alt": "Freixe II: mesa con flores frente a la cocina" },
+      { "n": "ii-chimenea-puerta", "ap": "II", "alt": "Rincón de la chimenea de Freixe II junto a la puerta" }
+    ]},
+    { "id": "dormitorio", "nombre": "Dormitorio", "corto": "Dormir", "texto": "Habitación de matrimonio con la piedra a la vista; la supletoria cabe en uno de los dos.", "fotos": [
+      { "n": "ii-dormitorio-piedra", "ap": "II", "alt": "Dormitorio de Freixe II con pared de piedra y ventana" },
+      { "n": "i-dormitorio-naranja", "ap": "I", "alt": "Dormitorio de Freixe I: cama de matrimonio y armario de madera" },
+      { "n": "i-dormitorio-buhardilla", "ap": "I", "alt": "Dormitorio de Freixe I bajo el tejado, con la piedra y las vigas" },
+      { "n": "ii-dormitorio-amarillo", "ap": "II", "alt": "Dormitorio de Freixe II con mesillas y la puerta al pasillo" },
+      { "n": "ii-dormitorio-ventana", "ap": "II", "alt": "Dormitorio de Freixe II junto a la ventana" },
+      { "n": "i-dormitorio-armario", "ap": "I", "alt": "Dormitorio de Freixe I con la puerta abierta a la escalera de piedra" },
+      { "n": "ii-dormitorio-libro", "ap": "II", "alt": "Cama de Freixe II con un libro abierto y la barandilla de madera" },
+      { "n": "ii-dormitorio-maleta", "ap": "II", "alt": "Dormitorio de Freixe II con la pared de piedra" }
+    ]},
+    { "id": "bano", "nombre": "Baño", "corto": "Baño", "texto": "Un baño completo en cada apartamento.", "fotos": [
+      { "n": "i-bano", "ap": "I", "alt": "Baño de Freixe I con lavabo y bañera" },
+      { "n": "ii-bano", "ap": "II", "alt": "Baño de Freixe II con lavabo y ventana" },
+      { "n": "i-dormitorio-puerta-bano", "ap": "I", "alt": "Freixe I: la puerta del baño desde el dormitorio" }
+    ]},
+    { "id": "escalera", "nombre": "Escalera y rincones", "corto": "Escalera", "texto": "Escalera de madera entre muros de pizarra, y lo que guarda la casa.", "fotos": [
+      { "n": "i-escalera", "ap": "I", "alt": "Escalera de madera de Freixe I entre muros de piedra" },
+      { "n": "i-escalera-piedra", "ap": "I", "alt": "Freixe I: la escalera sube junto al muro de pizarra" },
+      { "n": "i-cantaros", "ap": "I", "alt": "Cántaros y una plancha de hierro antigua sobre el muro de piedra" }
+    ]},
+    { "id": "fuera", "nombre": "Fuera", "corto": "Fuera", "texto": "Piedra, tejado de pizarra y el porche de madera, en el camino de la aldea.", "fotos": [
+      { "n": "casa-fachada", "ap": "", "alt": "La casa de piedra con tejado de pizarra y porche de madera, en Barcia" },
+      { "n": "casa-porche", "ap": "", "alt": "El porche de madera con flores y el banco junto a la puerta" },
+      { "n": "ii-entrada", "ap": "II", "alt": "La puerta de Freixe II en el muro de piedra" },
+      { "n": "casa-camino", "ap": "", "alt": "El camino de la aldea llega a la casa entre el monte" },
+      { "n": "aldea-entre-hojas", "ap": "", "alt": "Casas de la aldea vistas entre las hojas de los árboles" }
+    ]}
+  ]
+}
